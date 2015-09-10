@@ -10,7 +10,20 @@ html
 		meta(http-equiv="X-UA-Compatible" content="IE=edge")
 
 		title= title || 'SingingFaces'
-		link(rel="shortcut icon", href="/favicon.ico", type="image/x-icon")
+		link(rel="apple-touch-icon", sizes="57x57", href="images/apple-icon-57x57.png")
+		link(rel="apple-touch-icon", sizes="60x60", href="images/apple-icon-60x60.png")
+		link(rel="apple-touch-icon", sizes="72x72", href="images/apple-icon-72x72.png")
+		link(rel="apple-touch-icon", sizes="76x76", href="images/apple-icon-76x76.png")
+		link(rel="apple-touch-icon", sizes="114x114", href="images/apple-icon-114x114.png")
+		link(rel="apple-touch-icon", sizes="120x120", href="images/apple-icon-120x120.png")
+		link(rel="apple-touch-icon", sizes="144x144", href="images/apple-icon-144x144.png")
+		link(rel="apple-touch-icon", sizes="152x152", href="images/apple-icon-152x152.png")
+		link(rel="apple-touch-icon", sizes="180x180", href="images/apple-icon-180x180.png")
+		link(rel="icon" type="image/png", sizes="192x192"  href="images/android-icon-192x192.png")
+		link(rel="icon" type="image/png", sizes="32x32", href="images/favicon-32x32.png")
+		link(rel="icon" type="image/png", sizes="96x96", href="images/favicon-96x96.png")
+		link(rel="icon" type="image/png", sizes="16x16", href="images/favicon-16x16.png")
+		link(rel="manifest", href="images/manifest.json")
 
 		//- Customise the stylesheet for your site by editing /public/styles/site.sass
 		link(href="/styles/site.css", rel="stylesheet")
@@ -41,7 +54,7 @@ html
 			//- Customise your site's navigation by changing the navLinks Array in ./routes/middleware.js
 			//- ... or completely change this header to suit your design.
 
-			div(role="navigation").navbar.navbar-default
+			div(role="navigation").navbar.navbar-inverse
 				.container-fluid
 					.navbar-header
 						button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
@@ -83,8 +96,13 @@ html
 		//- FOOTER
 		.container: #footer
 
-			//- You don't _have_ to include a link saying your site is powered by KeystoneJS, but we appreciate it!
-			p Powered by <a href="http://keystonejs.com" target="_blank">KeystoneJS</a>.
+			p Powered by <a href="http://www.edmt.tv" target="_blank">EDMTApp</a>.
+			p In collaboration with 
+				a(href="http://www.neuromixer.com", target="_blank") Neuromixer
+				| ,
+				a(href="http://www.wearepictures.com", target="_blank") Wearepictures
+				| ,
+				a(href="http://www.shalomsalon.de", target="_blank") Shalom Salon
 
 
 		//- JAVASCRIPT
