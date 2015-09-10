@@ -13,6 +13,8 @@
 
 #include "FaceCanvas.h"
 
+#include "GraphicsElement.h"
+
 //==============================================================================
 /*
     This component lives inside our window, and this is where you should put all
@@ -25,7 +27,34 @@ public:
     MainContentComponent()
     {
         setSize (800, 600);
+        
+        root = new GraphicsElement();
 
+        ScopedPointer<XmlElement> xml = new XmlElement("Element");
+        xml->setAttribute("Name", "Root");
+        
+        XmlElement* ellipse = new XmlElement("Ellipse");
+        ellipse->setAttribute("Name", "Ellipse");
+        ellipse->setAttribute("X", 500.0);
+        ellipse->setAttribute("Y", 50.0);
+        ellipse->setAttribute("Width", 100.0);
+        ellipse->setAttribute("Height", 100.0);
+        
+        XmlElement* rectangle = new XmlElement("Rectangle");
+        rectangle->setAttribute("Name", "Rectangle");
+        rectangle->setAttribute("X", 300.0);
+        rectangle->setAttribute("Y", 50.0);
+        rectangle->setAttribute("Width", 100.0);
+        rectangle->setAttribute("Height", 100.0);
+        rectangle->setAttribute("FillColour", Colours::coral.toString());
+        
+        
+        xml->addChildElement(ellipse);
+        xml->addChildElement(rectangle);
+        
+        printf("Attempt to build element structure from xml\n");
+        root->fromXml(xml);
+        printf("success\n");
         // specify the number of input and output channels that we want to open
         setAudioChannels (2, 2);
     }
@@ -72,6 +101,7 @@ public:
         // (Our component is opaque, so we must completely fill the background with a solid colour)
         g.fillAll (Colours::black);
 
+        root->paint(g);
 
         // You can add your drawing code here!
     }
@@ -88,7 +118,7 @@ private:
     //==============================================================================
 
     // Your private member variables go here...
-
+    GraphicsElement *root;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (MainContentComponent)
 };

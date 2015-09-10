@@ -11,31 +11,28 @@
 
 #include <stdio.h>
 
-#include "IGraphicsElement.h"
+#include "GraphicsElement.h"
 
-class EllipseElement : public IGraphicsElement
+class EllipseElement : public GraphicsElement
 {
 public:
+    EllipseElement(GraphicsElement * parent = 0);
     virtual ~EllipseElement();
     
     virtual void paint(Graphics& g);
     
-    virtual XmlElement toXml() const;
-    virtual void fromXml(const XmlElement& xml);
-    
     virtual String xmlTag() const;
-    
-    
-    virtual void setAudioBufferPtr(AudioSampleBuffer *buffer) {}
-    virtual void onTouchGesture(TouchGestureEvent *gesture) {}
-    
+    virtual void toXml(XmlElement* xml) const;
+    virtual void fromXml(XmlElement* xml);
 private:
-    Colour colour;
-    bool fill;
+    Colour fillColour;
+    Colour borderColour;
+    bool clip;
     float x;
     float y;
     float width;
     float height;
+    float borderWidth;
 };
 
 #endif /* defined(__Faces__EllipseElement__) */

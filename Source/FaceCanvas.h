@@ -23,7 +23,7 @@
 //[Headers]     -- You can add your own extra header files here --
 #include "JuceHeader.h"
 
-#include "IGraphicsElement.h"
+#include "GraphicsElement.h"
 //[/Headers]
 
 

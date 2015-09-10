@@ -10,6 +10,8 @@
 
 #include "../JuceLibraryCode/JuceHeader.h"
 
+#define MDBG
+
 Component* createMainContentComponent();
 
 //==============================================================================
