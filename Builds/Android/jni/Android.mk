@@ -11,6 +11,7 @@ endif
 
 LOCAL_MODULE := juce_jni
 LOCAL_SRC_FILES := \
+  ../../../Source/FaceCanvas.cpp\
   ../../../Source/MainComponent.cpp\
   ../../../Source/Main.cpp\
   ../../../../Juce/JUCE-OSX/modules/juce_audio_basics/juce_audio_basics.cpp\

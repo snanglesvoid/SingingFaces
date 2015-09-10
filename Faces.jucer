@@ -5,6 +5,12 @@
               jucerVersion="3.2.0">
   <MAINGROUP id="zkiWlV" name="Faces">
     <GROUP id="{413474CA-240B-B280-A7E6-5EB7EBD965F9}" name="Source">
+      <GROUP id="{45346CE1-4A6F-AB37-857B-4ABFAAFBCB26}" name="GraphicsElements">
+        <FILE id="bsqwKg" name="IGraphicsElement.h" compile="0" resource="0"
+              file="Source/IGraphicsElement.h"/>
+      </GROUP>
+      <FILE id="IVXa6H" name="FaceCanvas.cpp" compile="1" resource="0" file="Source/FaceCanvas.cpp"/>
+      <FILE id="ID2PJM" name="FaceCanvas.h" compile="0" resource="0" file="Source/FaceCanvas.h"/>
       <FILE id="EGbZ9r" name="MainComponent.cpp" compile="1" resource="0"
             file="Source/MainComponent.cpp"/>
       <FILE id="UGNlYn" name="Main.cpp" compile="1" resource="0" file="Source/Main.cpp"/>

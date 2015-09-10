@@ -11,6 +11,8 @@
 
 #include "../JuceLibraryCode/JuceHeader.h"
 
+#include "FaceCanvas.h"
+
 //==============================================================================
 /*
     This component lives inside our window, and this is where you should put all
