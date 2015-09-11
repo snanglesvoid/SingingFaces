@@ -19,12 +19,16 @@ EllipseElement::EllipseElement(GraphicsElement* parent)
     y = 0.0;
     width = 0.0;
     height = 0.0;
-    borderWidth = 2.0;
+    borderWidth = 0.002;
 }
 
 EllipseElement::~EllipseElement()
 {
-    deallocate();
+    for (std::vector<GraphicsElement*>::iterator it = children.begin(); it != children.end(); ++it)
+    {
+        GraphicsElement* ge = *it;
+        delete ge;
+    }
 }
 
 void EllipseElement::paint(Graphics& g)
@@ -59,7 +63,7 @@ void EllipseElement::toXml(XmlElement *xml) const
     xml->setAttribute("y", y);
     xml->setAttribute("width", width);
     xml->setAttribute("height", height);
-    xml->setAttribute("borderWidth", borderWidth);
+    xml->setAttribute("borderWidth", borderWidth * 1000);
     GraphicsElement::toXml(xml);
 }
 
@@ -96,7 +100,7 @@ void EllipseElement::fromXml(XmlElement *xml)
     }
     if (xml->hasAttribute("borderWidth"))
     {
-        borderWidth = (float)(xml->getDoubleAttribute("borderWidth"));
+        borderWidth = (float)(xml->getDoubleAttribute("borderWidth") / 1000);
     }
     GraphicsElement::fromXml(xml);
 }

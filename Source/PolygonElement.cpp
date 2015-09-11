@@ -13,7 +13,7 @@ PolygonElement::PolygonElement(GraphicsElement* parent)
 {
     borderColour = Colours::black;
     fillColour = Colours::transparentBlack;
-    borderWidth = 2;
+    borderWidth = 0.002;
     clip = false;
     radius = 0;
 }
@@ -21,7 +21,11 @@ PolygonElement::PolygonElement(GraphicsElement* parent)
 PolygonElement::~PolygonElement()
 {
     path.clear();
-    deallocate();
+    for (std::vector<GraphicsElement*>::iterator it = children.begin(); it != children.end(); ++it)
+    {
+        GraphicsElement* ge = *it;
+        delete ge;
+    }
 }
 
 void PolygonElement::paint(Graphics& g)
@@ -51,8 +55,8 @@ void PolygonElement::toXml(XmlElement* xml) const
     xml->setAttribute("fillColor", fillColour.toString());
     xml->setAttribute("borderColor", borderColour.toString());
     xml->setAttribute("clip", clip ? "true" : "false");
-    xml->setAttribute("borderWidth", borderWidth);
-    xml->setAttribute("radius", radius);
+    xml->setAttribute("borderWidth", borderWidth * 1000);
+    xml->setAttribute("radius", radius * 1000);
     
     XmlElement* pXml = new XmlElement("points");
     
@@ -86,11 +90,11 @@ void PolygonElement::fromXml(XmlElement* xml)
     }
     if (xml->hasAttribute("borderWidth"))
     {
-        borderWidth = (float)(xml->getDoubleAttribute("borderWidth"));
+        borderWidth = (float)(xml->getDoubleAttribute("borderWidth") / 1000);
     }
     if (xml->hasAttribute("radius"))
     {
-        radius = (float)(xml->getDoubleAttribute("radius"));
+        radius = (float)(xml->getDoubleAttribute("radius") / 1000);
     }
     
     clearPoints();

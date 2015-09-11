@@ -25,13 +25,16 @@ public:
     virtual String xmlTag() const;
     virtual void toXml(XmlElement* xml) const;
     virtual void fromXml(XmlElement* xml);
-   
+    
+    virtual bool contains(const Point<float>& p) const;
+    
     void clearPath();
     
 private:
     Path path;
     
     bool clip;
+    bool fill;
     float radius;
 
     PathStrokeType stroke;

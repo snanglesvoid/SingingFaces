@@ -29,12 +29,16 @@ private:
     Colour fillColour;
     Colour borderColour;
     bool clip;
+    bool fill;
     float x;
     float y;
     float width;
     float height;
     float borderWidth;
     float radius;
+    Path clipPath;
+    
+    void calcPath();
 };
 
 #endif /* defined(__Faces__RectangleElement__) */

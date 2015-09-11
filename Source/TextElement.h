@@ -37,6 +37,8 @@ private:
     float y;
     float width;
     float height;
+    
+    int maxLines;
 };
 
 #endif /* defined(__Faces__TextElement__) */

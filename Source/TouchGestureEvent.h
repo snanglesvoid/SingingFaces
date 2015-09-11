@@ -11,9 +11,15 @@
 
 #include <stdio.h>
 
+#include "juceHeader.h"
+
 class TouchGestureEvent
 {
-    //TODO placeholder class
+    //TODO implementation
+    
+public:
+    std::vector<Point<float> > getTouchedPoints() const;
+    int getNumTouches() const;
 };
 
 #endif /* defined(__Faces__TouchGestureEvent__) */

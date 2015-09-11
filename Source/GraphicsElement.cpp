@@ -10,23 +10,25 @@
 
 unsigned long GraphicsElement::total_num_elements = 0;
 
-GraphicsElement::GraphicsElement(GraphicsElement* parent)
+GraphicsElement::GraphicsElement(GraphicsElement *parent)
 {
     this->parent = parent;
 }
 
 GraphicsElement::~GraphicsElement()
 {
-    deallocate();
+    for(int i = 0; i < children.size(); i++)
+    {
+        delete children[i];
+    }
 }
 
 void GraphicsElement::deallocate()
 {
     for (std::vector<GraphicsElement*>::iterator it = children.begin(); it != children.end(); ++it)
     {
-        
-//        if(*it)
-//            delete *it;
+        GraphicsElement *ge = *it;
+        delete ge;
     }
 }
 
@@ -43,13 +45,13 @@ String GraphicsElement::xmlTag() const
     return String("element");
 }
 
-void GraphicsElement::toXml(XmlElement* xml) const
+void GraphicsElement::toXml(XmlElement *xml) const
 {
     xml->setAttribute("name", name);
     for (std::vector<GraphicsElement *>::const_iterator it = children.begin(); it!= children.end(); ++it)
     {
-        GraphicsElement* e = *it;
-        XmlElement* child = new XmlElement(e->xmlTag());
+        GraphicsElement *e = *it;
+        XmlElement *child = new XmlElement(e->xmlTag());
         e->toXml(child);
         xml->addChildElement(child);
     }
@@ -63,9 +65,13 @@ void GraphicsElement::fromXml(XmlElement *xml)
     for (int i = 0; i < xml->getNumChildElements(); i++)
     {
         XmlElement* child = xml->getChildElement(i);
+        
         GraphicsElement* e = createElementInstance(child->getTagName(), this);
-        e->fromXml(child);
-        children.push_back(e);
+        if (e)
+        {
+            e->fromXml(child);
+            children.push_back(e);
+        }
     }
 }
 
@@ -83,6 +89,22 @@ GraphicsElement* createElementInstance(String xmlTag, GraphicsElement* parent)
         map["text"]      = &createElementInstance<TextElement>;
         map["polygon"]   = &createElementInstance<PolygonElement>;
         map["line"]      = &createElementInstance<LineElement>;
+        map["path"]      = &createElementInstance<PathElement>;
+        map["image"]     = &createElementInstance<ImageElement>;
+        map["transform"] = &createElementInstance<TransformElement>;
     }
-    return map[xmlTag.toStdString()](parent);
+    if (map.count(xmlTag.toStdString()) > 0)
+    {
+        return map[xmlTag.toStdString()](parent);
+    }
+    else
+    {
+        printf("in createElementInstance, tag not found: '%s'\n", xmlTag.toStdString().c_str());
+        return nullptr;
+    }
+}
+
+bool GraphicsElement::contains(const Point<float>& p) const
+{
+    return false;
 }

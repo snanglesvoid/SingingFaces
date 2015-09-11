@@ -13,13 +13,17 @@ SplineElement::SplineElement(GraphicsElement* parent)
 :GraphicsElement(parent)
 {
     colour = Colours::white;
-    lineThickness = 1.0f;
+    lineThickness = 0.0001f;
     precision = 10;
 }
 
 SplineElement::~SplineElement()
 {
-    deallocate();
+    for (std::vector<GraphicsElement*>::iterator it = children.begin(); it != children.end(); ++it)
+    {
+        GraphicsElement* ge = *it;
+        delete ge;
+    }
 }
 
 void SplineElement::paint(Graphics& g)
@@ -54,7 +58,7 @@ String SplineElement::xmlTag() const
 void SplineElement::toXml(XmlElement* xml) const
 {
     xml->setAttribute("color", colour.toString());
-    xml->setAttribute("lineThickness", lineThickness);
+    xml->setAttribute("lineThickness", lineThickness * 1000);
     xml->setAttribute("precision", precision);
     
     XmlElement* pXml = new XmlElement("points");
@@ -79,7 +83,7 @@ void SplineElement::fromXml(XmlElement *xml)
     }
     if (xml->hasAttribute("lineThickness"))
     {
-        lineThickness = (float)(xml->getDoubleAttribute("lineThickness"));
+        lineThickness = (float)(xml->getDoubleAttribute("lineThickness") / 1000);
     }
     if (xml->hasAttribute("precision"))
     {

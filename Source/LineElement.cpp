@@ -12,12 +12,16 @@ LineElement::LineElement(GraphicsElement* parent)
 :GraphicsElement(parent)
 {
     colour = Colours::white;
-    lineThickness = 1;
+    lineThickness = 0.001;
 }
 
 LineElement::~LineElement()
 {
-    deallocate();
+    for (std::vector<GraphicsElement*>::iterator it = children.begin(); it != children.end(); ++it)
+    {
+        GraphicsElement* ge = *it;
+        delete ge;
+    }
 }
 
 void LineElement::paint(Graphics& g)
@@ -35,7 +39,7 @@ String LineElement::xmlTag() const
 void LineElement::toXml(XmlElement *xml) const
 {
     xml->setAttribute("color", colour.toString());
-    xml->setAttribute("lineThickness", lineThickness);
+    xml->setAttribute("lineThickness", lineThickness * 1000);
     
     XmlElement* pXml = new XmlElement("points");
     
@@ -62,7 +66,7 @@ void LineElement::fromXml(XmlElement *xml)
     }
     if (xml->hasAttribute("lineThickness"))
     {
-        lineThickness = xml->getDoubleAttribute("lineThickness");
+        lineThickness = xml->getDoubleAttribute("lineThickness") / 1000;
     }
     
     XmlElement *psXml = xml->getChildByName("points");

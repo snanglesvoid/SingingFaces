@@ -18,6 +18,13 @@
     <FILE id="LXt46s" name="MainComponent.cpp" compile="1" resource="0"
           file="Source/MainComponent.cpp"/>
     <GROUP id="{1A844E0D-3DF1-D583-C000-DDB9A847DEFB}" name="GraphicsElements">
+      <FILE id="dkXxJa" name="TransformElement.cpp" compile="1" resource="0"
+            file="Source/TransformElement.cpp"/>
+      <FILE id="KVJMp4" name="TransformElement.h" compile="0" resource="0"
+            file="Source/TransformElement.h"/>
+      <FILE id="IUTG6U" name="ImageElement.cpp" compile="1" resource="0"
+            file="Source/ImageElement.cpp"/>
+      <FILE id="Xc4fyJ" name="ImageElement.h" compile="0" resource="0" file="Source/ImageElement.h"/>
       <FILE id="OrxvyU" name="PathElement.cpp" compile="1" resource="0" file="Source/PathElement.cpp"/>
       <FILE id="sfn7Qz" name="PathElement.h" compile="0" resource="0" file="Source/PathElement.h"/>
       <FILE id="OjgNdV" name="LineElement.cpp" compile="1" resource="0" file="Source/LineElement.cpp"/>
@@ -45,12 +52,17 @@
       <FILE id="FTJuA1" name="SplineElement.h" compile="0" resource="0" file="Source/SplineElement.h"/>
     </GROUP>
     <GROUP id="{41E33CB5-F448-2199-DD56-9AE9D1AEAE51}" name="Gestures">
+      <FILE id="mLuloz" name="GestureInterpretor.cpp" compile="1" resource="0"
+            file="Source/GestureInterpretor.cpp"/>
+      <FILE id="oo5Qew" name="GestureInterpretor.h" compile="0" resource="0"
+            file="Source/GestureInterpretor.h"/>
       <FILE id="AfiTZG" name="TouchGestureEvent.cpp" compile="1" resource="0"
             file="Source/TouchGestureEvent.cpp"/>
       <FILE id="PeZgeQ" name="TouchGestureEvent.h" compile="0" resource="0"
             file="Source/TouchGestureEvent.h"/>
     </GROUP>
     <GROUP id="{B874138E-4B8F-5F49-BF03-05C6809095AF}" name="Utility">
+      <FILE id="MBg825" name="xmlHelpers.h" compile="0" resource="0" file="Source/xmlHelpers.h"/>
       <FILE id="vUESVj" name="spline.h" compile="0" resource="0" file="Source/spline.h"/>
     </GROUP>
   </MAINGROUP>

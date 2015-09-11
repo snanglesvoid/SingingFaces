@@ -15,6 +15,8 @@ LOCAL_SRC_FILES := \
   ../../../Source/FaceCanvas.cpp\
   ../../../Source/Main.cpp\
   ../../../Source/MainComponent.cpp\
+  ../../../Source/TransformElement.cpp\
+  ../../../Source/ImageElement.cpp\
   ../../../Source/PathElement.cpp\
   ../../../Source/LineElement.cpp\
   ../../../Source/PolygonElement.cpp\
@@ -23,6 +25,7 @@ LOCAL_SRC_FILES := \
   ../../../Source/RectangleElement.cpp\
   ../../../Source/EllipseElement.cpp\
   ../../../Source/SplineElement.cpp\
+  ../../../Source/GestureInterpretor.cpp\
   ../../../Source/TouchGestureEvent.cpp\
   ../../../JuceLibraryCode/BinaryData.cpp\
   ../../../../Juce/JUCE-OSX/modules/juce_audio_basics/juce_audio_basics.cpp\

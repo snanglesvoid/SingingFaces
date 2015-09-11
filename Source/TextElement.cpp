@@ -21,14 +21,20 @@ TextElement::TextElement(GraphicsElement* parent)
 
 TextElement::~TextElement()
 {
-    deallocate();
+    for (std::vector<GraphicsElement*>::iterator it = children.begin(); it != children.end(); ++it)
+    {
+        GraphicsElement* ge = *it;
+        delete ge;
+    }
 }
 
 void TextElement::paint(Graphics& g)
 {
+    //printf("TextElement::paint()\n");
     g.setColour(colour);
-    g.setFont(30);
-    g.drawText(text, x, y, width, height, Justification(Justification::Flags::centred));
+    g.setFont(0.03);
+    g.drawFittedText(text, x, y, width, height, Justification(Justification::Flags::centred) , maxLines);
+    //g.drawText(text, x, y, width, height, Justification(Justification::Flags::centred));
     GraphicsElement::paint(g);
 }
 
@@ -45,6 +51,7 @@ void TextElement::toXml(XmlElement* xml) const
     xml->setAttribute("y", y);
     xml->setAttribute("width", width);
     xml->setAttribute("height", height);
+    xml->setAttribute("maxLines", maxLines);
     GraphicsElement::toXml(xml);
 }
 
@@ -73,6 +80,10 @@ void TextElement::fromXml(XmlElement* xml)
     if (xml->hasAttribute("text"))
     {
         text = xml->getStringAttribute("text");
+    }
+    if (xml->hasAttribute("maxLines"))
+    {
+        maxLines = xml->getIntAttribute("maxLines");
     }
     GraphicsElement::fromXml(xml);
 }

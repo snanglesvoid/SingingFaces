@@ -11,18 +11,19 @@
 #ifndef __Faces__GraphicsElement__
 #define __Faces__GraphicsElement__
 
+//library includes
 #include <stdio.h>
 #include <vector>
 #include <map>
 
 #include "JuceHeader.h"
+
+//local includes
 #include "TouchGestureEvent.h"
+#include "GestureInterpretor.h"
 
-
+//forward declaration of GraphicsElement
 class GraphicsElement;
-class EllipseElement;
-class SplineElement;
-class RectangleElement;
 
 template<typename E>
 GraphicsElement* createElementInstance(GraphicsElement* parent)
@@ -32,24 +33,46 @@ GraphicsElement* createElementInstance(GraphicsElement* parent)
 
 GraphicsElement* createElementInstance(String xmlTag, GraphicsElement* parent);
 
-class GraphicsElement
+//[GraphicsElement base class]
+//===========================================================================
+class GraphicsElement : public GestureListener
 {
 public:
     GraphicsElement(GraphicsElement * parent = 0);
     virtual ~GraphicsElement();
-    
+
+//[virtual functions]
+//===========================================================================
+
+    //from GraphicsElement
     virtual void paint(Graphics& g);
     
-    virtual String xmlTag() const;
-    virtual void toXml(XmlElement* xml) const;
-    virtual void fromXml(XmlElement* xml);
+    virtual String xmlTag() const;              //override this to specify the xml tag of your subclass
+                                                //the corresponding tagname should go into the map in createElementInstance
+    virtual void toXml(XmlElement* xml) const;  //writes entire GraphicsElements tree to the xmlElement
+    virtual void fromXml(XmlElement* xml);      //reads GraphicsElements tree from xml
     
+    virtual bool contains(const Point<float>& p) const;
+    
+    //inherited from GestureListener
+    virtual void onSwipe(const TouchGestureEvent& e) {}
+    virtual void onPinch(const TouchGestureEvent& e) {}
+    virtual void onTap(const TouchGestureEvent& e) {}
+    virtual void onDoubleTap(const TouchGestureEvent& e) {}
+    virtual void onHold(const TouchGestureEvent& e) {}
+    virtual void onDrag(const TouchGestureEvent& e) {}
+    
+//[/virtual functions
+//============================================================================
+
     String getName() const { return this->name; }
     void setName(const String& name) { this->name = name; }
     
     bool isTopLevelElement() { return parent == nullptr; }
+    
 protected:
     String name;
+    
     GraphicsElement* parent;
     std::vector<GraphicsElement *> children;
     
@@ -65,5 +88,8 @@ protected:
 #include "TextElement.h"
 #include "PolygonElement.h"
 #include "LineElement.h"
+#include "PathElement.h"
+#include "ImageElement.h"
+#include "TransformElement.h"
 
 #endif /* defined(__Faces__GraphicsElement__) */

@@ -15,28 +15,41 @@ RectangleElement::RectangleElement(GraphicsElement * parent)
     borderColour = Colours::white;
     fillColour = Colours::transparentBlack;
     clip = false;
+    fill = true;
     x = 0.0;
     y = 0.0;
     width = 0.0;
     height = 0.0;
-    borderWidth = 2.0;
+    borderWidth = 0.002;
     radius = 0.0;
+    
+    calcPath();
 }
 RectangleElement::~RectangleElement()
 {
-    deallocate();
+    for (std::vector<GraphicsElement*>::iterator it = children.begin(); it != children.end(); ++it)
+    {
+        GraphicsElement* ge = *it;
+        delete ge;
+    }
 }
 
 void RectangleElement::paint(Graphics& g)
 {
+    //printf("draw rectangle, x = %f, y = %f, w = %f, h = %f, bw = %f\n", x, y, width, height, borderWidth);
     g.saveState();
     
-    if (clip){
-        g.reduceClipRegion(x, y, width, height);
+    if (clip)
+    {
+        g.reduceClipRegion(clipPath);
+        
     }
     
-    g.setColour(fillColour);
-    g.fillRoundedRectangle(x, y, width, height, radius);
+    if (fill)
+    {
+        g.setColour(fillColour);
+        g.fillRoundedRectangle(x, y, width, height, radius);
+    }
     g.setColour(borderColour);
     g.drawRoundedRectangle(x, y, width, height, radius, borderWidth);
     
@@ -54,12 +67,13 @@ void RectangleElement::toXml(XmlElement* xml) const
     xml->setAttribute("fillColor", fillColour.toString());
     xml->setAttribute("borderColor", borderColour.toString());
     xml->setAttribute("clip", clip ? "true" : "false");
+    xml->setAttribute("fill", fill ? "true" : "false");
     xml->setAttribute("x", x);
     xml->setAttribute("y", y);
     xml->setAttribute("width", width);
     xml->setAttribute("height", height);
-    xml->setAttribute("borderWidth", borderWidth);
-    xml->setAttribute("radius", radius);
+    xml->setAttribute("borderWidth", borderWidth * 1000);
+    xml->setAttribute("radius", radius * 1000);
     GraphicsElement::toXml(xml);
 }
 void RectangleElement::fromXml(XmlElement* xml)
@@ -76,6 +90,11 @@ void RectangleElement::fromXml(XmlElement* xml)
     {
         String s = xml->getStringAttribute("clip");
         clip = s == "true";
+    }
+    if (xml->hasAttribute("fill"))
+    {
+        String s = xml->getStringAttribute("fill");
+        fill = s == "true";
     }
     if (xml->hasAttribute("x"))
     {
@@ -95,11 +114,22 @@ void RectangleElement::fromXml(XmlElement* xml)
     }
     if (xml->hasAttribute("borderWidth"))
     {
-        borderWidth = (float)(xml->getDoubleAttribute("borderWidth"));
+        borderWidth = (float)(xml->getDoubleAttribute("borderWidth") / 1000);
     }
     if (xml->hasAttribute("radius"))
     {
-        radius = (float)(xml->getDoubleAttribute("radius"));
+        radius = (float)(xml->getDoubleAttribute("radius") / 1000);
     }
+    calcPath();
     GraphicsElement::fromXml(xml);
+}
+
+void RectangleElement::calcPath()
+{
+    clipPath.clear();
+    clipPath.startNewSubPath(x, y);
+    clipPath.lineTo(x + width, y);
+    clipPath.lineTo(x + width, y + height);
+    clipPath.lineTo(x, y + height);
+    clipPath.closeSubPath();
 }
