@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Element name="Root">
-    <Ellipse name="Ellipse", x="100", y="100", width="100", height="50"/>
+    <Ellipse name="Ellipse", x="100", y="100", width="100", height="50", clip="True">
+        <Rectangle name>
     <Rectangle name="Rect", x="200", y="100", width="100", height="50", borderColour="#00ff0000"/>
 </Element>

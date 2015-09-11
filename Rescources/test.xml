@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<element name="root">
+  <rectangle name="background" borderColor="ff008020" fillColor="ff005010" x="0" y="0" width="1" height="1" borderWidth="10">
+    <spline name="spline" color="8899aa33" lineThickness="2" precision="50">
+      <points>
+        <point x="0.5" y="0.1"/>
+        <point x="0.2" y="0.2"/>
+        <point x="0.3" y="0.3"/>
+        <point x="0.4" y="0.5"/>
+        <point x="0.1" y="0.2"/>
+        <point x="0.7" y="0.3"/>
+      </points>
+    </spline>
+    <rectangle name="rectangle" fillColor="88ffffff" borderColor="ffffffff" x="0.2" y="0.2" width="0.3" height="0.6" clip="true" radius="20">
+      <ellipse name="ellipse" fillColor="88111144" borderColor="ff111144" x="0.2" y="0.3" width="0.2" height="0.4"/>
+      <text name="text" color="ff000000" text="hello world" x="0.25" y="0.4" width="0.2" height="0.05"/>
+    </rectangle>
+    <polygon name="pentagon" borderColor="ff881111" fillColor="88881111" borderWidth="2" radius="0">
+      <points>
+        <point x="0.5" y="0.2"/>
+        <point x="0.7" y="0.3"/>
+        <point x="0.6" y="0.4"/>
+        <point x="0.4" y="0.4"/>
+        <point x="0.3" y="0.3"/>
+      </points>
+    </polygon>
+  </rectangle>
+</element>
