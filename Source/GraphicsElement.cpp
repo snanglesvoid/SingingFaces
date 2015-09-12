@@ -8,7 +8,6 @@
 
 #include "GraphicsElement.h"
 
-unsigned long GraphicsElement::total_num_elements = 0;
 
 GraphicsElement::GraphicsElement(GraphicsElement *parent)
 {

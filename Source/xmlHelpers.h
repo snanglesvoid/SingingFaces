@@ -108,6 +108,10 @@ void replaceInAttributes(XmlElement* xml, String oldVal, String newVal)
     }
 }
 
+/** replaces all elements with the macro tags to their corresponding files
+ @param XmlElement *xml
+ @param String path
+ */
 void expandMacros(XmlElement* xml, String path)
 {
     

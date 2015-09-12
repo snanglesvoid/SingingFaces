@@ -75,9 +75,8 @@ protected:
     
     GraphicsElement* parent;
     std::vector<GraphicsElement *> children;
-    
-    static unsigned long total_num_elements;
-    
+
+private:
     void deallocate();
 };
 

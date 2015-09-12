@@ -59,8 +59,8 @@ public:
     void parseTestRoot()
     {
         
-        String filename = "~/Desktop/test.xml";
-        root = readAndParse(filename, getWidth(), getHeight());
+
+        root = readAndParse("~/Desktop/test.xml", getWidth(), getHeight());
       
         //write root to xmlout
 //        ScopedPointer<XmlElement> xmlout = new XmlElement("element");
