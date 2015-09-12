@@ -17,11 +17,11 @@ ImageElement::ImageElement(GraphicsElement *parent)
 
 ImageElement::~ImageElement()
 {
-    for (std::vector<GraphicsElement*>::iterator it = children.begin(); it != children.end(); ++it)
-    {
-        GraphicsElement* ge = *it;
-        delete ge;
-    }
+//    for (std::vector<GraphicsElement*>::iterator it = children.begin(); it != children.end(); ++it)
+//    {
+//        GraphicsElement* ge = *it;
+//        delete ge;
+//    }
 }
 
 void ImageElement::paint(Graphics &g)

@@ -24,7 +24,11 @@ TransformElement::TransformElement(GraphicsElement *parent)
 
 TransformElement::~TransformElement()
 {
-    
+    //    for (std::vector<GraphicsElement*>::iterator it = children.begin(); it != children.end(); ++it)
+    //    {
+    //        GraphicsElement* ge = *it;
+    //        delete ge;
+    //    }
 }
 
 void TransformElement::paint(juce::Graphics &g)

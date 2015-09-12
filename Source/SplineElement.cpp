@@ -19,11 +19,11 @@ SplineElement::SplineElement(GraphicsElement* parent)
 
 SplineElement::~SplineElement()
 {
-    for (std::vector<GraphicsElement*>::iterator it = children.begin(); it != children.end(); ++it)
-    {
-        GraphicsElement* ge = *it;
-        delete ge;
-    }
+//    for (std::vector<GraphicsElement*>::iterator it = children.begin(); it != children.end(); ++it)
+//    {
+//        GraphicsElement* ge = *it;
+//        delete ge;
+//    }
 }
 
 void SplineElement::paint(Graphics& g)

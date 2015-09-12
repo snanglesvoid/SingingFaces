@@ -21,11 +21,11 @@ PolygonElement::PolygonElement(GraphicsElement* parent)
 PolygonElement::~PolygonElement()
 {
     path.clear();
-    for (std::vector<GraphicsElement*>::iterator it = children.begin(); it != children.end(); ++it)
-    {
-        GraphicsElement* ge = *it;
-        delete ge;
-    }
+//    for (std::vector<GraphicsElement*>::iterator it = children.begin(); it != children.end(); ++it)
+//    {
+//        GraphicsElement* ge = *it;
+//        delete ge;
+//    }
 }
 
 void PolygonElement::paint(Graphics& g)

@@ -76,7 +76,6 @@ public:
     ~MainContentComponent()
     {
         shutdownAudio();
-        delete root;
     }
 
     //=======================================================================

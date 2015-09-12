@@ -114,7 +114,7 @@ void expandMacros(XmlElement* xml, String path)
     if (xml->hasTagName("macro") && xml->hasAttribute("filename"))
     {
         String filename = xml->getStringAttribute("filename");
-        XmlElement* expand = XmlDocument::parse(File(path+"/"+filename));
+        ScopedPointer<XmlElement> expand = XmlDocument::parse(File(path+"/"+filename));
         if (xml->getNumChildElements() > 0)
         {
             if (expand->hasAttribute("childrenIn"))
@@ -137,7 +137,6 @@ void expandMacros(XmlElement* xml, String path)
                     {
                         target->addChildElement(new XmlElement(*child));
                     }
-                    //delete child ??? ;
                 }
             }
             else

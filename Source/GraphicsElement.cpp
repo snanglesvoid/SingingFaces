@@ -17,10 +17,7 @@ GraphicsElement::GraphicsElement(GraphicsElement *parent)
 
 GraphicsElement::~GraphicsElement()
 {
-    for(int i = 0; i < children.size(); i++)
-    {
-        delete children[i];
-    }
+    deallocate();
 }
 
 void GraphicsElement::deallocate()

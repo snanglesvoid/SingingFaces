@@ -27,11 +27,12 @@ RectangleElement::RectangleElement(GraphicsElement * parent)
 }
 RectangleElement::~RectangleElement()
 {
-    for (std::vector<GraphicsElement*>::iterator it = children.begin(); it != children.end(); ++it)
-    {
-        GraphicsElement* ge = *it;
-        delete ge;
-    }
+//    for (std::vector<GraphicsElement*>::iterator it = children.begin(); it != children.end(); ++it)
+//    {
+//        GraphicsElement* ge = *it;
+//        delete ge;
+//    }
+    clipPath.clear();
 }
 
 void RectangleElement::paint(Graphics& g)
