@@ -15,6 +15,9 @@ LOCAL_SRC_FILES := \
   ../../../Source/FaceCanvas.cpp\
   ../../../Source/Main.cpp\
   ../../../Source/MainComponent.cpp\
+  ../../../Source/ReactiveGraphicsElement.cpp\
+  ../../../Source/ReactiveRectangleElement.cpp\
+  ../../../Source/ReactiveSplineElement.cpp\
   ../../../Source/TransformElement.cpp\
   ../../../Source/ImageElement.cpp\
   ../../../Source/PathElement.cpp\

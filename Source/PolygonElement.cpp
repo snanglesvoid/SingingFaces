@@ -21,11 +21,6 @@ PolygonElement::PolygonElement(GraphicsElement* parent)
 PolygonElement::~PolygonElement()
 {
     path.clear();
-//    for (std::vector<GraphicsElement*>::iterator it = children.begin(); it != children.end(); ++it)
-//    {
-//        GraphicsElement* ge = *it;
-//        delete ge;
-//    }
 }
 
 void PolygonElement::paint(Graphics& g)
@@ -33,9 +28,11 @@ void PolygonElement::paint(Graphics& g)
     g.setColour(borderColour);
     g.strokePath(path, PathStrokeType(borderWidth));
     
-    g.setColour(fillColour);
-    g.fillPath(path);
-    
+    if (fill)
+    {
+        g.setColour(fillColour);
+        g.fillPath(path);
+    }
     g.saveState();
     if(clip)
     {
@@ -55,6 +52,7 @@ void PolygonElement::toXml(XmlElement* xml) const
     xml->setAttribute("fillColor", fillColour.toString());
     xml->setAttribute("borderColor", borderColour.toString());
     xml->setAttribute("clip", clip ? "true" : "false");
+    xml->setAttribute("fill", fill ? "true" : "false");
     xml->setAttribute("borderWidth", borderWidth * 1000);
     xml->setAttribute("radius", radius * 1000);
     
@@ -87,6 +85,11 @@ void PolygonElement::fromXml(XmlElement* xml)
     {
         String s = xml->getStringAttribute("clip");
         clip = s == "true";
+    }
+    if (xml->hasAttribute("fill"))
+    {
+        String s = xml->getStringAttribute("fill");
+        fill = s == "true";
     }
     if (xml->hasAttribute("borderWidth"))
     {
@@ -130,15 +133,18 @@ void PolygonElement::clearPoints()
 }
 void PolygonElement::updatePolygon()
 {
-    if (getNumPoints() == 0) return;
+    if (getNumPoints() == 0 || getNumPoints() == 1) return;
+    Point<float> startPoint = Point<float>(xs[0], ys[0])
+    .translated((xs[1] - xs[0]) / 2, (ys[1] - ys[0]) / 2);
     
-    path.startNewSubPath(xs[0], ys[0]);
+    path.startNewSubPath(startPoint);
     for (int i = 1; i < getNumPoints(); i++)
     {
         path.lineTo(xs[i], ys[i]);
     }
     path.lineTo(xs[0], ys[0]);
-    path.closeSubPath();
+    path.lineTo(startPoint);
+    //path.closeSubPath();
     if (radius > 0)
     {
         path = path.createPathWithRoundedCorners(radius);

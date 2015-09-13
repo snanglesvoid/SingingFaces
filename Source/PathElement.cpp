@@ -27,11 +27,6 @@ PathElement::PathElement(GraphicsElement* parent)
 PathElement::~PathElement()
 {
     path.clear();
-//    for (std::vector<GraphicsElement*>::iterator it = children.begin(); it != children.end(); ++it)
-//    {
-//        GraphicsElement* ge = *it;
-//        delete ge;
-//    }
 }
 
 void PathElement::clearPath()

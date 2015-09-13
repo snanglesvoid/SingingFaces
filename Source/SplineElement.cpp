@@ -19,11 +19,7 @@ SplineElement::SplineElement(GraphicsElement* parent)
 
 SplineElement::~SplineElement()
 {
-//    for (std::vector<GraphicsElement*>::iterator it = children.begin(); it != children.end(); ++it)
-//    {
-//        GraphicsElement* ge = *it;
-//        delete ge;
-//    }
+
 }
 
 void SplineElement::paint(Graphics& g)
@@ -95,7 +91,7 @@ void SplineElement::fromXml(XmlElement *xml)
     {
         forEachXmlChildElement(*psXml, p)
         {
-            if (p->getTagName() == "point" && p->hasAttribute("x") && p->hasAttribute("x"))
+            if (p->getTagName() == "point" && p->hasAttribute("x") && p->hasAttribute("y"))
             {
                 double x = p->getDoubleAttribute("x");
                 double y = p->getDoubleAttribute("y");

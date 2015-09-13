@@ -21,11 +21,7 @@ TextElement::TextElement(GraphicsElement* parent)
 
 TextElement::~TextElement()
 {
-//    for (std::vector<GraphicsElement*>::iterator it = children.begin(); it != children.end(); ++it)
-//    {
-//        GraphicsElement* ge = *it;
-//        delete ge;
-//    }
+
 }
 
 void TextElement::paint(Graphics& g)

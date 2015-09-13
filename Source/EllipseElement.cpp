@@ -24,11 +24,7 @@ EllipseElement::EllipseElement(GraphicsElement* parent)
 
 EllipseElement::~EllipseElement()
 {
-//    for (std::vector<GraphicsElement*>::iterator it = children.begin(); it != children.end(); ++it)
-//    {
-//        GraphicsElement* ge = *it;
-//        delete ge;
-//    }
+
 }
 
 void EllipseElement::paint(Graphics& g)

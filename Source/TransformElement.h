@@ -41,13 +41,30 @@ public:
     //[/virtual functions
     //============================================================================
     
-private:
+protected:
     AffineTransform transform;
-    
+
     float rotationAngle;
     Point<float> pivot;
     Point<float> translation;
     Point<float> scale;
+};
+
+class RepeatElement : public TransformElement
+{
+public:
+    RepeatElement(GraphicsElement* parent);
+    virtual ~RepeatElement();
+    
+    virtual void paint(Graphics &g);
+    
+    virtual String xmlTag() const;
+    
+    virtual void toXml(XmlElement *xml) const;
+    virtual void fromXml(XmlElement *xml);
+    
+private:
+    int n;
 };
 
 #endif /* defined(__Faces__TransformElement__) */

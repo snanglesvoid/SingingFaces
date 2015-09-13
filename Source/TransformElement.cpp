@@ -24,11 +24,7 @@ TransformElement::TransformElement(GraphicsElement *parent)
 
 TransformElement::~TransformElement()
 {
-    //    for (std::vector<GraphicsElement*>::iterator it = children.begin(); it != children.end(); ++it)
-    //    {
-    //        GraphicsElement* ge = *it;
-    //        delete ge;
-    //    }
+
 }
 
 void TransformElement::paint(juce::Graphics &g)
@@ -100,4 +96,48 @@ void TransformElement::fromXml(XmlElement *xml)
     }
 
     GraphicsElement::fromXml(xml);
+}
+
+RepeatElement::RepeatElement(GraphicsElement *parent)
+:TransformElement(parent)
+{
+    n = 1;
+}
+
+RepeatElement::~RepeatElement()
+{
+    
+}
+
+void RepeatElement::paint(juce::Graphics &g)
+{
+    g.saveState();
+    for (int i = 0; i < n; i++)
+    {
+        GraphicsElement::paint(g);
+        g.addTransform(AffineTransform::translation(translation.x, translation.y));
+        g.addTransform(AffineTransform::scale(scale.x, scale.y));
+        g.addTransform(AffineTransform::rotation(rotationAngle, pivot.x, pivot.y));
+    }
+    g.restoreState();
+}
+
+String RepeatElement::xmlTag() const
+{
+    return String("repeat");
+}
+
+void RepeatElement::toXml(juce::XmlElement *xml) const
+{
+    xml->setAttribute("n", n);
+    TransformElement::toXml(xml);
+}
+
+void RepeatElement::fromXml(juce::XmlElement *xml)
+{
+    if (xml->hasAttribute("n"))
+    {
+        n = xml->getIntAttribute("n");
+    }
+    TransformElement::fromXml(xml);
 }

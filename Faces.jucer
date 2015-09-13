@@ -4,6 +4,10 @@
               bundleIdentifier="com.yourcompany.Faces" includeBinaryInAppConfig="1"
               jucerVersion="3.2.0">
   <MAINGROUP id="zkiWlV" name="Faces">
+    <GROUP id="{BAC109AD-C81E-B63E-E1C0-B714340BA3AF}" name="Reactors">
+      <FILE id="a5Es2H" name="ReactiveParameter.h" compile="0" resource="0"
+            file="Source/ReactiveParameter.h"/>
+    </GROUP>
     <GROUP id="{E26439C3-C1BC-40BE-B13C-7D156B2CEA7C}" name="Rescources">
       <FILE id="HUt8jI" name="test.xml" compile="0" resource="1" file="Rescources/test.xml"/>
     </GROUP>
@@ -18,6 +22,18 @@
     <FILE id="LXt46s" name="MainComponent.cpp" compile="1" resource="0"
           file="Source/MainComponent.cpp"/>
     <GROUP id="{1A844E0D-3DF1-D583-C000-DDB9A847DEFB}" name="GraphicsElements">
+      <FILE id="LGJzKS" name="ReactiveGraphicsElement.cpp" compile="1" resource="0"
+            file="Source/ReactiveGraphicsElement.cpp"/>
+      <FILE id="sR97YR" name="ReactiveGraphicsElement.h" compile="0" resource="0"
+            file="Source/ReactiveGraphicsElement.h"/>
+      <FILE id="pBTjRq" name="ReactiveRectangleElement.cpp" compile="1" resource="0"
+            file="Source/ReactiveRectangleElement.cpp"/>
+      <FILE id="lqnYME" name="ReactiveRectangleElement.h" compile="0" resource="0"
+            file="Source/ReactiveRectangleElement.h"/>
+      <FILE id="WBwxTK" name="ReactiveSplineElement.cpp" compile="1" resource="0"
+            file="Source/ReactiveSplineElement.cpp"/>
+      <FILE id="BrSD6q" name="ReactiveSplineElement.h" compile="0" resource="0"
+            file="Source/ReactiveSplineElement.h"/>
       <FILE id="dkXxJa" name="TransformElement.cpp" compile="1" resource="0"
             file="Source/TransformElement.cpp"/>
       <FILE id="KVJMp4" name="TransformElement.h" compile="0" resource="0"

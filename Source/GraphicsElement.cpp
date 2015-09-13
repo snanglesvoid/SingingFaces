@@ -88,6 +88,10 @@ GraphicsElement* createElementInstance(String xmlTag, GraphicsElement* parent)
         map["path"]      = &createElementInstance<PathElement>;
         map["image"]     = &createElementInstance<ImageElement>;
         map["transform"] = &createElementInstance<TransformElement>;
+        map["repeat"]    = &createElementInstance<RepeatElement>;
+        map["rRectangle"]= &createElementInstance<ReactiveRectangleElement>;
+        map["rSpline"]   = &createElementInstance<ReactiveSplineElement>;
+        //map["rmsSpline"] = &createElementInstance<AudioReactiveSplineElement>;
     }
     if (map.count(xmlTag.toStdString()) > 0)
     {
@@ -104,3 +108,12 @@ bool GraphicsElement::contains(const Point<float>& p) const
 {
     return false;
 }
+
+//void GraphicsElement::setupAudioReactorEmitter(AudioReactEventEmitter *emitter)
+//{
+//    this->audioReactEventEmitter = emitter;
+//    for (std::vector<GraphicsElement *>::iterator it = children.begin(); it != children.end(); ++it)
+//    {
+//        (*it)->setupAudioReactorEmitter(emitter);
+//    }
+//}

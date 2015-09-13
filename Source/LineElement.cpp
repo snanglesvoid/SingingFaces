@@ -17,15 +17,12 @@ LineElement::LineElement(GraphicsElement* parent)
 
 LineElement::~LineElement()
 {
-//    for (std::vector<GraphicsElement*>::iterator it = children.begin(); it != children.end(); ++it)
-//    {
-//        GraphicsElement* ge = *it;
-//        delete ge;
-//    }
+
 }
 
 void LineElement::paint(Graphics& g)
 {
+    g.setColour(colour);
     g.drawLine(line, lineThickness);
     
     GraphicsElement::paint(g);

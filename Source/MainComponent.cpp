@@ -9,18 +9,20 @@
 #ifndef MAINCOMPONENT_H_INCLUDED
 #define MAINCOMPONENT_H_INCLUDED
 
+//library includes
 #include "../JuceLibraryCode/JuceHeader.h"
 #include <vector>
 #include <ctime>
 
+//utility includes
+#include "spline.h"
+#include "xmlHelpers.h"
+
+//local includes
 #include "FaceCanvas.h"
 #include "ControlPanel.h"
 #include "GestureInterpretor.h"
 #include "GraphicsElement.h"
-#include "spline.h"
-
-#include "xmlHelpers.h"
-
 
 //==============================================================================
 /*
@@ -29,8 +31,8 @@
 */
 
 
-
 class MainContentComponent   : public AudioAppComponent
+                             , public Timer
 {
 public:
     //==============================================================================
@@ -40,10 +42,11 @@ public:
         
         coordinateTransform = AffineTransform::identity
         .translated(1, 1)
-        .scaled(getWidth() / 2,getHeight() / 2);
+        .scaled(getWidth()/2,getHeight()/2);
 
         
         gestureInterpreter = new GestureInterpretor;
+        gestureInterpreter->setSize(getWidth(), getHeight());
         
         addMouseListener(gestureInterpreter, false);
         
@@ -53,8 +56,22 @@ public:
         parseTestRoot();
         // specify the number of input and output channels that we want to open
         setAudioChannels (2, 2);
+        
+        Point<float> amount;
+        String s = "3,6.2";
+        int commaIndex = s.indexOf(",");
+        amount.x = s.substring(0, commaIndex).getDoubleValue();
+        amount.y = s.substring(commaIndex + 1, s.length()).getDoubleValue();
+        printf("%f,%f\n", amount.x, amount.y);
+        
+        Timer::startTimer(50);
     }
     
+    
+    void timerCallback()
+    {
+        repaint();
+    }
 
     void parseTestRoot()
     {
@@ -136,6 +153,10 @@ public:
         .translated(1, 1)
         .scaled(getWidth() / 2,getHeight() / 2);
         
+        if(gestureInterpreter)
+        {
+            gestureInterpreter->setSize(getWidth(), getHeight());
+        }
         //repaint();
         
     }

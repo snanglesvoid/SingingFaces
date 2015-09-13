@@ -21,6 +21,8 @@
 //local includes
 #include "TouchGestureEvent.h"
 #include "GestureInterpretor.h"
+//#include "AudioReactor.h"
+//#include "AudioReactiveParameter.h"
 
 //forward declaration of GraphicsElement
 class GraphicsElement;
@@ -70,12 +72,13 @@ public:
     
     bool isTopLevelElement() { return parent == nullptr; }
     
+    
 protected:
     String name;
     
     GraphicsElement* parent;
     std::vector<GraphicsElement *> children;
-
+    
 private:
     void deallocate();
 };
@@ -90,5 +93,9 @@ private:
 #include "PathElement.h"
 #include "ImageElement.h"
 #include "TransformElement.h"
+
+//all subclasses of ReactiveGraphicsElement must be included in "ReactiveGraphicsElement.h" below the class definition
+#include "ReactiveGraphicsElement.h"
+
 
 #endif /* defined(__Faces__GraphicsElement__) */

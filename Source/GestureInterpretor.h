@@ -11,14 +11,23 @@
 
 #include <stdio.h>
 #include <vector>
+#include <map>
 #include "JuceHeader.h"
 #include "TouchGestureEvent.h"
 
 class GestureListener;
 
+
 class GestureInterpretor : public MouseListener
 {
 public:
+    static float mouseY;
+    static float mouseX;
+    static float audioRMS;
+    
+    static std::map<std::string, float*> reactorSources;
+
+    
     GestureInterpretor();
     
     virtual void mouseMove (const MouseEvent& event);
@@ -126,8 +135,12 @@ public:
     void addListener(GestureListener* listener);
     void removeListener(GestureListener* listener);
     
+    void setSize(float x, float y);
+    
 private:
     std::vector<GestureListener*> listeners;
+    
+    float width, height;
     
 //    void emitSwipe(const TouchGestureEvent& e);
 //    void emitPinch(const TouchGestureEvent& e);

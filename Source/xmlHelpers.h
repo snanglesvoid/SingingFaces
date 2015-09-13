@@ -90,6 +90,7 @@ void replaceInAttributes(XmlElement* xml, String oldVal, String newVal)
         String anam = xml->getAttributeName(i);
         String aval = xml->getAttributeValue(i);
         xml->setAttribute(anam, aval.replace(oldVal, newVal));
+//        //debug printout
 //        printf("replace in attributes:\n"
 //               "  attrname = %s\n"
 //               "  attrval  = %s\n"

@@ -8,10 +8,25 @@
 
 #include "GestureInterpretor.h"
 
+
 GestureInterpretor::GestureInterpretor()
 {
-
+    width = 0;
+    height = 0;
+    
+    if (GestureInterpretor::reactorSources.size() == 0)
+    {
+        GestureInterpretor::reactorSources["mouseX"] = &GestureInterpretor::mouseX;
+        GestureInterpretor::reactorSources["mouseY"] = &GestureInterpretor::mouseY;
+        GestureInterpretor::reactorSources["audioRMS"] = &GestureInterpretor::audioRMS;
+    }
 }
+
+float GestureInterpretor::mouseX = 0.0f;
+float GestureInterpretor::mouseY = 0.0f;
+float GestureInterpretor::audioRMS = 0.0f;
+
+std::map<std::string, float*> GestureInterpretor::reactorSources = std::map<std::string, float*>();
 
 void GestureInterpretor::addListener(GestureListener *listener)
 {
@@ -33,7 +48,9 @@ void GestureInterpretor::removeListener(GestureListener *listener)
 
 void GestureInterpretor::mouseMove(const juce::MouseEvent &event)
 {
-    printf("mouseMove: x = %d, y = %d\n", event.getPosition().x, event.getPosition().y);
+    //printf("mouseMove: x = %d, y = %d\n", event.getPosition().x, event.getPosition().y);
+    mouseX = event.getPosition().x / (width/2) - 1;
+    mouseY = event.getPosition().y / (height/2) - 1;
 }
 void GestureInterpretor::mouseEnter(const juce::MouseEvent &event)
 {
@@ -69,6 +86,12 @@ void GestureInterpretor::mouseWheelMove(const juce::MouseEvent &event, const Mou
            wheel.deltaY);
 }
 
+
+void GestureInterpretor::setSize(float x, float y)
+{
+    this->width = x;
+    this->height = y;
+}
 
 
 

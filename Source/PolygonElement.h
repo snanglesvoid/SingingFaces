@@ -46,6 +46,7 @@ private:
     float radius;
     
     bool clip;
+    bool fill;
 };
 
 #endif /* defined(__Faces__PolygonElement__) */
