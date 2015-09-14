@@ -28,7 +28,8 @@ keystone.pre('render', middleware.flashMessages);
 
 // Import Route Controllers
 var routes = {
-	views: importRoutes('./views')
+	views: importRoutes('./views'),
+	api:  importRoutes('./api')
 };
 
 // Setup Route Bindings
@@ -41,6 +42,19 @@ exports = module.exports = function(app) {
 	app.get('/gallery', routes.views.gallery);
 	app.all('/contact', routes.views.contact);
 	
+	// API
+	app.post('/api/createUser', routes.api.createUser);
+	app.get('/api/getUser/:user', routes.api.getUser);
+	app.post('/api/saveUser/:user', routes.api.saveUser);
+	app.post('/api/deleteUser/:user', routes.api.deleteUser);
+	app.get('/api/getFaces/:user?', routes.api.getFaces); // List faces for a specific user or all
+	app.post('/api/createFace', middleware.requireUser, routes.api.createFace);
+	app.get('/api/getFace/:face', middleware.requireUser, routes.api.getFace);
+	app.post('/api/saveFace/:face', middleware.requireUser, routes.api.saveFace);
+	app.post('/api/deleteFace/:face', middleware.requireUser, routes.api.deleteFace);
+	app.get('/api/getFavorites', middleware.requireUser, routes.api.getFavorites);
+	app.post('/api/addFavorite', middleware.requireUser, routes.api.addFavorite);
+
 	// NOTE: To protect a route so that only admins can see it, use the requireUser middleware:
 	// app.get('/protected', middleware.requireUser, routes.views.protected);
 	
