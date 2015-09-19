@@ -33,6 +33,6 @@ exports = module.exports = function(req, res){
 				slug : face.slug
 			};
 			console.log(toJSON);
-			res.send(JSON.stringify(toJSON));
+			res.send(JSON.stringify(toJSON));	
 		});
 }

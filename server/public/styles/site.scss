@@ -4,13 +4,14 @@
 // Some themes require to shuffle the order around between swatch and strap
 
 //@import "bootstrap/bootstrap/variables";
-//@import "bootstrap/paper/bootswatch";
+//@import "bootstrap/lumen/bootswatch";
 
-@import "bootstrap/bootstrap";
-@import "bootstrap/paper/variables";
+//@import "bootstrap/bootstrap";
+//@import "bootstrap/paper/variables";
 
 // Site Styles
 // ===========
 
 // Add your own site style includes here
 @import "site/layout";
+@import "site/fonts";

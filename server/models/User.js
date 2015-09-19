@@ -6,16 +6,21 @@ var Types = keystone.Field.Types;
  * ==========
  */
 
-var User = new keystone.List('User');
+var User = new keystone.List('User', {
+	autokey : { path:'slug', from:'name', unique:true },
+	track : { createdAt:true, updatedAt:true }
+});
 
 User.add({
-	name: { type: Types.Name, required: true, index: true },
-	email: { type: Types.Email, initial: true, required: true, index: true },
-	password: { type: Types.Password, initial: true, required: true },
-	faces: { type: Types.Relationship, ref: 'Face', many: true},
-	favorites: { type: Types.Relationship, ref: 'Face', many: true}
+	name 		: { type: Types.Name, required: true, index: true },
+	email 		: { type: Types.Email, initial: true, required: true, index: true },
+	password 	: { type: Types.Password, initial: true, required: true },
+	faces 		: { type: Types.Relationship, ref: 'Face', many: true},
+	credits		: { type: Types.Number, default: 10 },
+	location	: { type: Types.Location }, //verify
+	language	: { type: String, default: 'en-US' } // verify
 }, 'Permissions', {
-	isAdmin: { type: Boolean, label: 'Can access Keystone', index: true }
+	isAdmin		: { type: Boolean, label: 'Can access Keystone', index: true }
 });
 
 // Provide access to Keystone

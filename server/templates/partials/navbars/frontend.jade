@@ -1,0 +1,15 @@
+.interface.interface-logo
+	a(href='/'): img(src='/images/logo.svg', title='Singing Face', alt='Singing Face', width='160')
+.interface.interface-login
+	if user
+		a.btn.btn-default(href='/profile')
+			//img(src=(user.photo && user._.photo.thumbnail(27,27) : user.avatarUrl || '/images/avatar.png'), width=27).img-circle
+			| Profile
+		a.btn.btn-primary(href='/signout')
+			span Sign out
+			span
+	else
+		a(href='/signin') Sign in
+		// Join is only possible via the App
+
+

@@ -11,8 +11,8 @@ var keystone = require('keystone');
 
 keystone.init({
 
-	'name': 'SingingFaces',
-	'brand': 'SingingFaces',
+	'name': 'SingingFace',
+	'brand': 'SingingFace',
 	
 	'sass': 'public',
 	'static': 'public',
@@ -23,7 +23,10 @@ keystone.init({
 	'auto update': true,
 	'session': true,
 	'auth': true,
-	'user model': 'User'
+	'user model': 'User',
+
+	'signin url':'/keystone/signin',
+	'signin redirect':'/profile'
 
 });
 
