@@ -42,7 +42,7 @@ exports = module.exports = function(app) {
 	app.get('/blog/post/:post', routes.views.post);
 	app.get('/gallery', routes.views.gallery);
 	app.all('/contact', routes.views.contact);
-	app.get('/:user?', routes.views.profile);
+	app.get('/u/:user?', routes.views.profile);
 
 	// Session
     app.all('/join', routes.views.session.join);
@@ -57,17 +57,16 @@ exports = module.exports = function(app) {
     app.all('/auth/:service', routes.auth.service);
 	
 	// API
-	app.post('/api/createUser', routes.api.createUser);
-	app.get('/api/getUser/:user', routes.api.getUser);
-	app.post('/api/saveUser/:user', routes.api.saveUser);
-	app.post('/api/deleteUser/:user', routes.api.deleteUser);
-	app.get('/api/getFaces/:user?', routes.api.getFaces); // List faces for a specific user or all
-	app.post('/api/createFace', middleware.requireUser, routes.api.createFace);
-	app.get('/api/getFace/:face', middleware.requireUser, routes.api.getFace);
-	app.post('/api/saveFace/:face', middleware.requireUser, routes.api.saveFace);
-	app.post('/api/deleteFace/:face', middleware.requireUser, routes.api.deleteFace);
-	app.get('/api/getFavorites', middleware.requireUser, routes.api.getFavorites);
-	app.post('/api/addFavorite', middleware.requireUser, routes.api.addFavorite);
+	app.all('/api/createUser', routes.api.createUser); // combine and or compare to join
+	app.all('/api/saveUser/:user', routes.api.saveUser); 
+
+	app.all('/api/getUser/:user?', routes.api.getUser);
+	app.all('/api/deleteUser/:userId', routes.api.deleteUser); // done
+
+	app.all('/api/getFaces/:user?', routes.api.getFaces); // done
+	app.all('/api/getFace/:faceId', routes.api.getFace); // done
+	app.all('/api/saveFace', routes.api.saveFace); // done save & create
+	app.all('/api/deleteFace/:faceId', routes.api.deleteFace); // done
 
 	// NOTE: To protect a route so that only admins can see it, use the requireUser middleware:
 	// app.get('/protected', middleware.requireUser, routes.views.protected);

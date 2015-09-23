@@ -1,0 +1,27 @@
+extends ../layouts/default
+
+mixin face(face)
+	.face(data-ks-editable=editable(user, { list: 'Face', id: face.id }))
+		.code= face.fml
+		h2: a(href='/f/face/' + face.slug)= face.name
+		//p.lead.text-muted Posted 
+			if face.updatedAt
+				| on #{face._.updatedAt.format('MMMM Do, YYYY')} 
+		
+		//if face.image.exists
+			img(src=face._.image.fit(160,160)).img.pull-right
+
+block intro 
+	.container 
+		h1 #{user.name.first} #{user.name.last}
+
+block content 
+	.container
+		h4.text-weight-normal Showing #{utils.plural(user.faces.length, '* face')}.
+						.blog
+							each face in user.faces
+								.code= face.fml 
+								.plays #{face.plays}
+								.status= face.status
+								hr
+								//+face(face)
