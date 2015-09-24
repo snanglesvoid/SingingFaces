@@ -17,7 +17,10 @@ Face.add({
     //about           : { type: Types.Markdown, height: 100 },
     plays           : { type: Types.Number, default: 0 },
     image           : { type: Types.CloudinaryImage },
-    fml             : { type: Types.Code, height: 200, language: 'xml' },
+    faceBase        : { type: Types.CloudinaryImage },
+    faceEyes        : { type: Types.CloudinaryImage },
+    faceMouth       : { type: Types.CloudinaryImage },
+    //fml             : { type: Types.Code, height: 200, language: 'xml' },
     status          : { type: Types.Select, options: 'reported, rejected, active' },
     location        : { type: Types.Location }, //supports multiple inputs
     language        : { type: String, default: 'en-US' } // for more specific localization
