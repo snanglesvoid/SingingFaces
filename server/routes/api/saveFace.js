@@ -9,7 +9,7 @@ exports = module.exports = function(req, res){
 	var f = req.body.face;
 	if (f._id){
 	keystone.list('Face').model.find()
-		.where('_id', p._id)
+		.where('_id', f._id)
 		.exec(function(err, faces){
 			if (err) res.send(404);
 			var pdb = faces[0];

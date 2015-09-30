@@ -53,6 +53,7 @@ exports = module.exports = function(app) {
 
     // Authentication
     app.all('/auth/confirm', routes.auth.confirm);
+    app.all('/auth/confirmApp', routes.auth.confirmApp);
     //app.all('/auth/app', routes.auth.app);
     app.all('/auth/:service', routes.auth.service);
 	
