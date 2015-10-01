@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>FAA0189D-55D3-4FB8-B3E1-3C69F5529BE4</string>
+	<key>IDESourceControlProjectName</key>
+	<string>SingingFacesApp</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>B21EFE5F216D06904338DF2066AEBE5BCA56F14B</key>
+		<string>https://github.com/snanglesvoid/SingingFaces.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>SingingFacesApp/Builds/MacOSX/SingingFacesApp.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>B21EFE5F216D06904338DF2066AEBE5BCA56F14B</key>
+		<string>../../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/snanglesvoid/SingingFaces.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>B21EFE5F216D06904338DF2066AEBE5BCA56F14B</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>B21EFE5F216D06904338DF2066AEBE5BCA56F14B</string>
+			<key>IDESourceControlWCCName</key>
+			<string>SingingFaces</string>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -4,10 +4,93 @@
               bundleIdentifier="com.yourcompany.Faces" includeBinaryInAppConfig="1"
               jucerVersion="3.2.0">
   <MAINGROUP id="zkiWlV" name="Faces">
-    <GROUP id="{413474CA-240B-B280-A7E6-5EB7EBD965F9}" name="Source">
-      <FILE id="EGbZ9r" name="MainComponent.cpp" compile="1" resource="0"
-            file="Source/MainComponent.cpp"/>
-      <FILE id="UGNlYn" name="Main.cpp" compile="1" resource="0" file="Source/Main.cpp"/>
+    <GROUP id="{BAC109AD-C81E-B63E-E1C0-B714340BA3AF}" name="Reactors">
+      <FILE id="a5Es2H" name="ReactiveParameter.h" compile="0" resource="0"
+            file="Source/ReactiveParameter.h"/>
+    </GROUP>
+    <GROUP id="{E26439C3-C1BC-40BE-B13C-7D156B2CEA7C}" name="Rescources">
+      <FILE id="HUt8jI" name="test.xml" compile="0" resource="1" file="Rescources/test.xml"/>
+    </GROUP>
+    <GROUP id="{ACEC2795-BD06-668D-42BA-B96FD6666DF8}" name="GuiComponents">
+      <FILE id="C8Tq5A" name="XmlTreeView.cpp" compile="1" resource="0" file="Source/XmlTreeView.cpp"/>
+      <FILE id="ou7h4V" name="XmlTreeView.h" compile="0" resource="0" file="Source/XmlTreeView.h"/>
+      <FILE id="BohDKp" name="FaceCanvas.cpp" compile="1" resource="0" file="Source/FaceCanvas.cpp"/>
+      <FILE id="BsdJVG" name="FaceCanvas.h" compile="0" resource="0" file="Source/FaceCanvas.h"/>
+    </GROUP>
+    <FILE id="rgpXAU" name="Main.cpp" compile="1" resource="0" file="Source/Main.cpp"/>
+    <FILE id="LXt46s" name="MainComponent.cpp" compile="1" resource="0"
+          file="Source/MainComponent.cpp"/>
+    <GROUP id="{1A844E0D-3DF1-D583-C000-DDB9A847DEFB}" name="GraphicsElements">
+      <FILE id="gBa8ik" name="GradientElement.cpp" compile="1" resource="0"
+            file="Source/GradientElement.cpp"/>
+      <FILE id="UmejDK" name="GradientElement.h" compile="0" resource="0"
+            file="Source/GradientElement.h"/>
+      <FILE id="RlzgTf" name="ReactiveTransformElement.cpp" compile="1" resource="0"
+            file="Source/ReactiveTransformElement.cpp"/>
+      <FILE id="Y1KjbI" name="ReactiveTransformElement.h" compile="0" resource="0"
+            file="Source/ReactiveTransformElement.h"/>
+      <FILE id="rHVQKA" name="ReactiveWaveformElement.cpp" compile="1" resource="0"
+            file="Source/ReactiveWaveformElement.cpp"/>
+      <FILE id="w761RZ" name="ReactiveWaveformElement.h" compile="0" resource="0"
+            file="Source/ReactiveWaveformElement.h"/>
+      <FILE id="LGJzKS" name="ReactiveGraphicsElement.cpp" compile="1" resource="0"
+            file="Source/ReactiveGraphicsElement.cpp"/>
+      <FILE id="sR97YR" name="ReactiveGraphicsElement.h" compile="0" resource="0"
+            file="Source/ReactiveGraphicsElement.h"/>
+      <FILE id="pBTjRq" name="ReactiveRectangleElement.cpp" compile="1" resource="0"
+            file="Source/ReactiveRectangleElement.cpp"/>
+      <FILE id="lqnYME" name="ReactiveRectangleElement.h" compile="0" resource="0"
+            file="Source/ReactiveRectangleElement.h"/>
+      <FILE id="WBwxTK" name="ReactiveSplineElement.cpp" compile="1" resource="0"
+            file="Source/ReactiveSplineElement.cpp"/>
+      <FILE id="BrSD6q" name="ReactiveSplineElement.h" compile="0" resource="0"
+            file="Source/ReactiveSplineElement.h"/>
+      <FILE id="dkXxJa" name="TransformElement.cpp" compile="1" resource="0"
+            file="Source/TransformElement.cpp"/>
+      <FILE id="KVJMp4" name="TransformElement.h" compile="0" resource="0"
+            file="Source/TransformElement.h"/>
+      <FILE id="IUTG6U" name="ImageElement.cpp" compile="1" resource="0"
+            file="Source/ImageElement.cpp"/>
+      <FILE id="Xc4fyJ" name="ImageElement.h" compile="0" resource="0" file="Source/ImageElement.h"/>
+      <FILE id="OrxvyU" name="PathElement.cpp" compile="1" resource="0" file="Source/PathElement.cpp"/>
+      <FILE id="sfn7Qz" name="PathElement.h" compile="0" resource="0" file="Source/PathElement.h"/>
+      <FILE id="OjgNdV" name="LineElement.cpp" compile="1" resource="0" file="Source/LineElement.cpp"/>
+      <FILE id="zfNE8C" name="LineElement.h" compile="0" resource="0" file="Source/LineElement.h"/>
+      <FILE id="xLIhU5" name="PolygonElement.cpp" compile="1" resource="0"
+            file="Source/PolygonElement.cpp"/>
+      <FILE id="oz8x61" name="PolygonElement.h" compile="0" resource="0"
+            file="Source/PolygonElement.h"/>
+      <FILE id="ucr6GZ" name="TextElement.cpp" compile="1" resource="0" file="Source/TextElement.cpp"/>
+      <FILE id="ewe6wI" name="TextElement.h" compile="0" resource="0" file="Source/TextElement.h"/>
+      <FILE id="clsHCn" name="GraphicsElement.cpp" compile="1" resource="0"
+            file="Source/GraphicsElement.cpp"/>
+      <FILE id="EB7bDq" name="GraphicsElement.h" compile="0" resource="0"
+            file="Source/GraphicsElement.h"/>
+      <FILE id="RNAuRe" name="RectangleElement.cpp" compile="1" resource="0"
+            file="Source/RectangleElement.cpp"/>
+      <FILE id="jHm9ek" name="RectangleElement.h" compile="0" resource="0"
+            file="Source/RectangleElement.h"/>
+      <FILE id="VJqPlc" name="EllipseElement.cpp" compile="1" resource="0"
+            file="Source/EllipseElement.cpp"/>
+      <FILE id="KJJO7A" name="EllipseElement.h" compile="0" resource="0"
+            file="Source/EllipseElement.h"/>
+      <FILE id="u0Voim" name="SplineElement.cpp" compile="1" resource="0"
+            file="Source/SplineElement.cpp"/>
+      <FILE id="FTJuA1" name="SplineElement.h" compile="0" resource="0" file="Source/SplineElement.h"/>
+    </GROUP>
+    <GROUP id="{41E33CB5-F448-2199-DD56-9AE9D1AEAE51}" name="Gestures">
+      <FILE id="mLuloz" name="GestureInterpretor.cpp" compile="1" resource="0"
+            file="Source/GestureInterpretor.cpp"/>
+      <FILE id="oo5Qew" name="GestureInterpretor.h" compile="0" resource="0"
+            file="Source/GestureInterpretor.h"/>
+      <FILE id="AfiTZG" name="TouchGestureEvent.cpp" compile="1" resource="0"
+            file="Source/TouchGestureEvent.cpp"/>
+      <FILE id="PeZgeQ" name="TouchGestureEvent.h" compile="0" resource="0"
+            file="Source/TouchGestureEvent.h"/>
+    </GROUP>
+    <GROUP id="{B874138E-4B8F-5F49-BF03-05C6809095AF}" name="Utility">
+      <FILE id="MBg825" name="xmlHelpers.h" compile="0" resource="0" file="Source/xmlHelpers.h"/>
+      <FILE id="vUESVj" name="spline.h" compile="0" resource="0" file="Source/spline.h"/>
     </GROUP>
   </MAINGROUP>
   <EXPORTFORMATS>

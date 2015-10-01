@@ -11,8 +11,29 @@ endif
 
 LOCAL_MODULE := juce_jni
 LOCAL_SRC_FILES := \
-  ../../../Source/MainComponent.cpp\
+  ../../../Source/XmlTreeView.cpp\
+  ../../../Source/FaceCanvas.cpp\
   ../../../Source/Main.cpp\
+  ../../../Source/MainComponent.cpp\
+  ../../../Source/GradientElement.cpp\
+  ../../../Source/ReactiveTransformElement.cpp\
+  ../../../Source/ReactiveWaveformElement.cpp\
+  ../../../Source/ReactiveGraphicsElement.cpp\
+  ../../../Source/ReactiveRectangleElement.cpp\
+  ../../../Source/ReactiveSplineElement.cpp\
+  ../../../Source/TransformElement.cpp\
+  ../../../Source/ImageElement.cpp\
+  ../../../Source/PathElement.cpp\
+  ../../../Source/LineElement.cpp\
+  ../../../Source/PolygonElement.cpp\
+  ../../../Source/TextElement.cpp\
+  ../../../Source/GraphicsElement.cpp\
+  ../../../Source/RectangleElement.cpp\
+  ../../../Source/EllipseElement.cpp\
+  ../../../Source/SplineElement.cpp\
+  ../../../Source/GestureInterpretor.cpp\
+  ../../../Source/TouchGestureEvent.cpp\
+  ../../../JuceLibraryCode/BinaryData.cpp\
   ../../../../Juce/JUCE-OSX/modules/juce_audio_basics/juce_audio_basics.cpp\
   ../../../../Juce/JUCE-OSX/modules/juce_audio_devices/juce_audio_devices.cpp\
   ../../../../Juce/JUCE-OSX/modules/juce_audio_formats/juce_audio_formats.cpp\
