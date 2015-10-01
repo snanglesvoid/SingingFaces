@@ -1,12 +1,55 @@
+
 #header {
-	margin-top: 30px;
+	height: 84;
+}
+
+.interface {
+	position: absolute;
+	width: 50%;
+	padding: 20px;
+}
+.interface-logo {
+	text-align: left;
+	top: 0;
+	left: 0;
+
+}
+.interface-login {
+	text-align: right;
+	right:0;
+	top: 0;
+}
+.interface-credits {
+	text-align: right;
+	bottom: 0;
+	right: 0;
+}
+.interface-menu {
+	text-align: left;
+	bottom: 0;
+	left: 0;
+}
+
+body {
+	padding: 20px;
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#d2ff52+0,91e842+100;Neon */
+background: #d2ff52; /* Old browsers */
+background: -moz-linear-gradient(-45deg,  #d2ff52 0%, #91e842 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#d2ff52), color-stop(100%,#91e842)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(-45deg,  #d2ff52 0%,#91e842 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(-45deg,  #d2ff52 0%,#91e842 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(-45deg,  #d2ff52 0%,#91e842 100%); /* IE10+ */
+background: linear-gradient(135deg,  #d2ff52 0%,#91e842 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d2ff52', endColorstr='#91e842',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+#body {
+	margin-top: 200px;
 }
 
 #footer {
 	margin-top: 30px;
-	border-top: 1px solid $gray-lighter;
 	padding-top: 30px;
-	color: $gray-light;
 }
 
 .gallery-image img{

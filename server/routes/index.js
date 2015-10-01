@@ -28,7 +28,9 @@ keystone.pre('render', middleware.flashMessages);
 
 // Import Route Controllers
 var routes = {
-	views: importRoutes('./views')
+	views: importRoutes('./views'),
+	auth: importRoutes('./auth'),
+	api:  importRoutes('./api')
 };
 
 // Setup Route Bindings
@@ -40,7 +42,33 @@ exports = module.exports = function(app) {
 	app.get('/blog/post/:post', routes.views.post);
 	app.get('/gallery', routes.views.gallery);
 	app.all('/contact', routes.views.contact);
+	app.get('/u/:user?', routes.views.profile);
+
+	// Session
+    app.all('/join', routes.views.session.join);
+    app.all('/signin', routes.views.session.signin);
+    app.get('/signout', routes.views.session.signout);
+    app.all('/forgot-password', routes.views.session['forgot-password']);
+    app.all('/reset-password/:key', routes.views.session['reset-password']);
+
+    // Authentication
+    app.all('/auth/confirm', routes.auth.confirm);
+    app.all('/auth/confirmApp', routes.auth.confirmApp);
+    //app.all('/auth/app', routes.auth.app);
+    app.all('/auth/:service', routes.auth.service);
 	
+	// API
+	app.all('/api/createUser', routes.api.createUser); // combine and or compare to join
+	app.all('/api/saveUser/:user', routes.api.saveUser); 
+
+	app.all('/api/getUser/:user?', routes.api.getUser);
+	app.all('/api/deleteUser/:userId', routes.api.deleteUser); // done
+
+	app.all('/api/getFaces/:user?', routes.api.getFaces); // done
+	app.all('/api/getFace/:faceId', routes.api.getFace); // done
+	app.all('/api/saveFace', routes.api.saveFace); // done save & create
+	app.all('/api/deleteFace/:faceId', routes.api.deleteFace); // done
+
 	// NOTE: To protect a route so that only admins can see it, use the requireUser middleware:
 	// app.get('/protected', middleware.requireUser, routes.views.protected);
 	

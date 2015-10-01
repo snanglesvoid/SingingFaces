@@ -23,12 +23,7 @@ exports.initLocals = function(req, res, next) {
 	
 	var locals = res.locals;
 	
-	locals.navLinks = [
-		{ label: 'Home',		key: 'home',		href: '/' },
-		{ label: 'Blog',		key: 'blog',		href: '/blog' },
-		{ label: 'Gallery',		key: 'gallery',		href: '/gallery' },
-		{ label: 'Contact',		key: 'contact',		href: '/contact' }
-	];
+	locals.navLinks = [];
 	
 	locals.user = req.user;
 	
@@ -62,12 +57,39 @@ exports.flashMessages = function(req, res, next) {
  */
 
 exports.requireUser = function(req, res, next) {
-	
+	if (!req.user) {
+		console.log('acces denied');
+		req.flash('error', 'Please sign in to access this page.');
+		res.redirect('/signin');
+	} else {
+		next();
+	}	
+};
+
+exports.requirePremiumUser = function(req, res, next) {
+	if (!req.user) {
+		req.flash('error', 'Please sign in to access this page.');
+		res.redirect('/signin');
+	}
+	else if (!req.user.isPremium){
+		req.flash('error', 'This feature can only be used by Premium Users.');
+		res.redirect('/signin');
+	} 
+	else{
+		next();
+	}
+};
+
+exports.requireAdmin = function(req, res, next) {
 	if (!req.user) {
 		req.flash('error', 'Please sign in to access this page.');
 		res.redirect('/keystone/signin');
-	} else {
+	}
+	else if (!req.user.isAdmin){
+		req.flash('error', 'This feature can only be accessed by administrators.');
+		res.redirect('/profile')
+	}
+	else{
 		next();
 	}
-	
 };
