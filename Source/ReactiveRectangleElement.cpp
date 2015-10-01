@@ -22,13 +22,24 @@ ReactiveRectangleElement::ReactiveRectangleElement(GraphicsElement *parent)
     colourParameters["borderColor"] = &borderColour;
 }
 
+void ReactiveRectangleElement::update()
+{
+    fx = x();
+    fy = y();
+    fw = width();
+    fh = height();
+    if (clip)
+    {
+        calcPath();
+    }
+}
+
 void ReactiveRectangleElement::paint(juce::Graphics &g)
 {
     g.saveState();
     
     if (clip)
     {
-        calcPath();
         g.reduceClipRegion(clipPath);
     }
     if(width() > 0 && height() > 0)
@@ -37,10 +48,10 @@ void ReactiveRectangleElement::paint(juce::Graphics &g)
         if (fill)
         {
             g.setColour(fillColour());
-            g.fillRoundedRectangle(x(), y(), width(), height(), radius());
+            g.fillRoundedRectangle(fx, fy, fw, fh, radius());
         }
         g.setColour(borderColour());
-        g.drawRoundedRectangle(x(), y(), width(), height(), radius(), borderWidth());
+        g.drawRoundedRectangle(fx, fy, fw, fh, radius(), borderWidth());
         
     }
     GraphicsElement::paint(g);
@@ -79,9 +90,9 @@ void ReactiveRectangleElement::fromXml(juce::XmlElement *xml)
 void ReactiveRectangleElement::calcPath()
 {
     clipPath.clear();
-    clipPath.startNewSubPath(x(), y());
-    clipPath.lineTo(x() + width(), y());
-    clipPath.lineTo(x() + width(), y() + height());
-    clipPath.lineTo(x(), y() + height());
+    clipPath.startNewSubPath(fx, fy);
+    clipPath.lineTo(fx + fw, fy);
+    clipPath.lineTo(fx + fw, fy + fh);
+    clipPath.lineTo(fx, fy + fh);
     clipPath.closeSubPath();
 }

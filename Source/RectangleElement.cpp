@@ -128,4 +128,8 @@ void RectangleElement::calcPath()
     clipPath.lineTo(x + width, y + height);
     clipPath.lineTo(x, y + height);
     clipPath.closeSubPath();
+    if (radius != 0)
+    {
+        clipPath = clipPath.createPathWithRoundedCorners(radius);
+    }
 }

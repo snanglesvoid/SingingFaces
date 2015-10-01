@@ -19,12 +19,28 @@ GestureInterpretor::GestureInterpretor()
         GestureInterpretor::reactorSources["mouseX"] = &GestureInterpretor::mouseX;
         GestureInterpretor::reactorSources["mouseY"] = &GestureInterpretor::mouseY;
         GestureInterpretor::reactorSources["audioRMS"] = &GestureInterpretor::audioRMS;
+        GestureInterpretor::reactorSources["seconds"] = &GestureInterpretor::seconds;
+        GestureInterpretor::reactorSources["pressX"] = &GestureInterpretor::pressX;
+        GestureInterpretor::reactorSources["pressY"] = &GestureInterpretor::pressY;
+    }
+    
+    for (int i = 0; i < audioBufferSize; ++i)
+    {
+        audioInBuffer[i] = 0;
     }
 }
 
 float GestureInterpretor::mouseX = 0.0f;
 float GestureInterpretor::mouseY = 0.0f;
 float GestureInterpretor::audioRMS = 0.0f;
+float GestureInterpretor::seconds = 0.0f;
+float GestureInterpretor::pressX = 0.0f;
+float GestureInterpretor::pressY = 0.0f;
+
+const int GestureInterpretor::audioBufferSize = 1024;
+int GestureInterpretor::audioBufferWriteIndex = 0;
+
+float *GestureInterpretor::audioInBuffer = new float[GestureInterpretor::audioBufferSize];
 
 std::map<std::string, float*> GestureInterpretor::reactorSources = std::map<std::string, float*>();
 
@@ -67,6 +83,8 @@ void GestureInterpretor::mouseDown(const juce::MouseEvent &event)
 void GestureInterpretor::mouseDrag(const juce::MouseEvent &event)
 {
     printf("mouseDrag: x = %d, y = %d\n", event.getPosition().x, event.getPosition().y);
+    pressX = event.getPosition().x / (width/2) - 1;
+    pressY = event.getPosition().y / (height/2) - 1;
 }
 void GestureInterpretor::mouseUp(const juce::MouseEvent &event)
 {

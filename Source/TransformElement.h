@@ -65,6 +65,8 @@ public:
     
 private:
     int n;
+    
+    
 };
 
 #endif /* defined(__Faces__TransformElement__) */

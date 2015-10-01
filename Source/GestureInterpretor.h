@@ -23,9 +23,16 @@ class GestureInterpretor : public MouseListener
 public:
     static float mouseY;
     static float mouseX;
+    static float pressX;
+    static float pressY;
     static float audioRMS;
+    static float seconds;
     
     static std::map<std::string, float*> reactorSources;
+    
+    static const int audioBufferSize;
+    static float * audioInBuffer;
+    static int audioBufferWriteIndex;
 
     
     GestureInterpretor();

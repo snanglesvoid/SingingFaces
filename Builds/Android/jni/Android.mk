@@ -11,10 +11,13 @@ endif
 
 LOCAL_MODULE := juce_jni
 LOCAL_SRC_FILES := \
-  ../../../Source/ControlPanel.cpp\
+  ../../../Source/XmlTreeView.cpp\
   ../../../Source/FaceCanvas.cpp\
   ../../../Source/Main.cpp\
   ../../../Source/MainComponent.cpp\
+  ../../../Source/GradientElement.cpp\
+  ../../../Source/ReactiveTransformElement.cpp\
+  ../../../Source/ReactiveWaveformElement.cpp\
   ../../../Source/ReactiveGraphicsElement.cpp\
   ../../../Source/ReactiveRectangleElement.cpp\
   ../../../Source/ReactiveSplineElement.cpp\

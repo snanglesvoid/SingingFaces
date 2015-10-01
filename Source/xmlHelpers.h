@@ -164,6 +164,11 @@ void expandMacros(XmlElement* xml, String path)
     }
 }
 
+GraphicsElement* parse (XmlElement* xml)
+{
+    
+}
+
 GraphicsElement* readAndParse(String filename, int width, int height)
 {
     File file(filename);

@@ -25,6 +25,7 @@ public:
     ReactiveSplineElement(GraphicsElement *parent = 0);
     virtual ~ReactiveSplineElement();
     
+    virtual void update();
     virtual void paint(Graphics &g);
     
     virtual String xmlTag() const;
@@ -40,6 +41,8 @@ private:
     ReactiveParameter<Colour> fillColour;
     ReactiveParameter<float> lineThickness;
     Path path;
+    
+    
     
     PathStrokeType stroke;
     

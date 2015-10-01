@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<JUCERPROJECT id="XHesUP" name="SingingFacesApp" projectType="guiapp" version="1.0.0"
+              bundleIdentifier="com.yourcompany.SingingFacesApp" includeBinaryInAppConfig="1"
+              jucerVersion="3.2.0">
+  <MAINGROUP id="Kf7fPI" name="SingingFacesApp">
+    <GROUP id="{372E51FA-2895-6D5B-4158-E367B427618F}" name="Resources">
+      <GROUP id="{E9CA452F-D02E-17C5-79CE-6E3587E85604}" name="Icons">
+        <FILE id="cXSxqt" name="face_dummy.png" compile="0" resource="1" file="Resources/Icons/face_dummy.png"/>
+        <FILE id="FYLykg" name="noun_476_cc.png" compile="0" resource="1" file="Resources/Icons/noun_476_cc.png"/>
+        <FILE id="uU7CKO" name="noun_476_cc.svg" compile="0" resource="1" file="Resources/Icons/noun_476_cc.svg"/>
+        <FILE id="zexd3w" name="noun_9016-200.png" compile="0" resource="1"
+              file="Resources/Icons/noun_9016-200.png"/>
+        <FILE id="rdLrQM" name="noun_15467_cc.png" compile="0" resource="1"
+              file="Resources/Icons/noun_15467_cc.png"/>
+        <FILE id="h4xSOp" name="noun_15467_cc.svg" compile="0" resource="1"
+              file="Resources/Icons/noun_15467_cc.svg"/>
+        <FILE id="SD8f31" name="noun_17142_cc.png" compile="0" resource="1"
+              file="Resources/Icons/noun_17142_cc.png"/>
+        <FILE id="nzi2kR" name="noun_17142_cc.svg" compile="0" resource="1"
+              file="Resources/Icons/noun_17142_cc.svg"/>
+        <FILE id="bwpS1L" name="noun_26635_cc.png" compile="0" resource="1"
+              file="Resources/Icons/noun_26635_cc.png"/>
+        <FILE id="mAVpoE" name="noun_26635_cc.svg" compile="0" resource="1"
+              file="Resources/Icons/noun_26635_cc.svg"/>
+        <FILE id="EDOAhz" name="noun_28381_cc.png" compile="0" resource="1"
+              file="Resources/Icons/noun_28381_cc.png"/>
+        <FILE id="BqVhlV" name="noun_28381_cc.svg" compile="0" resource="1"
+              file="Resources/Icons/noun_28381_cc.svg"/>
+        <FILE id="ZthrKK" name="noun_32109_cc.png" compile="0" resource="1"
+              file="Resources/Icons/noun_32109_cc.png"/>
+        <FILE id="H5RA2E" name="noun_32109_cc.svg" compile="0" resource="1"
+              file="Resources/Icons/noun_32109_cc.svg"/>
+        <FILE id="W5SOZ8" name="noun_40254_cc.png" compile="0" resource="1"
+              file="Resources/Icons/noun_40254_cc.png"/>
+        <FILE id="UdkFrI" name="noun_40254_cc.svg" compile="0" resource="1"
+              file="Resources/Icons/noun_40254_cc.svg"/>
+        <FILE id="PwPVuP" name="noun_110649_cc.png" compile="0" resource="1"
+              file="Resources/Icons/noun_110649_cc.png"/>
+        <FILE id="jITlnX" name="noun_110649_cc.svg" compile="0" resource="1"
+              file="Resources/Icons/noun_110649_cc.svg"/>
+        <FILE id="e73xt6" name="noun_113859_cc.png" compile="0" resource="1"
+              file="Resources/Icons/noun_113859_cc.png"/>
+        <FILE id="tAtR4k" name="noun_113859_cc.svg" compile="0" resource="1"
+              file="Resources/Icons/noun_113859_cc.svg"/>
+        <FILE id="JpynJ2" name="noun_139286_cc.png" compile="0" resource="1"
+              file="Resources/Icons/noun_139286_cc.png"/>
+        <FILE id="CFXd5G" name="noun_139286_cc.svg" compile="0" resource="1"
+              file="Resources/Icons/noun_139286_cc.svg"/>
+        <FILE id="XodJO2" name="noun_170340_cc.png" compile="0" resource="1"
+              file="Resources/Icons/noun_170340_cc.png"/>
+        <FILE id="i3tmei" name="noun_170340_cc.svg" compile="0" resource="1"
+              file="Resources/Icons/noun_170340_cc.svg"/>
+        <FILE id="QR9Mi5" name="noun_170933_cc.png" compile="0" resource="1"
+              file="Resources/Icons/noun_170933_cc.png"/>
+        <FILE id="pbLsMz" name="noun_170933_cc.svg" compile="0" resource="1"
+              file="Resources/Icons/noun_170933_cc.svg"/>
+      </GROUP>
+    </GROUP>
+    <GROUP id="{FA852686-63D8-16DC-B21D-D2BD32DF5DE8}" name="Source">
+      <FILE id="LoZ1De" name="Face.cpp" compile="1" resource="0" file="Source/Face.cpp"/>
+      <FILE id="pIoDcI" name="Face.h" compile="0" resource="0" file="Source/Face.h"/>
+      <FILE id="eLzwIQ" name="FaceList.cpp" compile="1" resource="0" file="Source/FaceList.cpp"/>
+      <FILE id="G1mhP6" name="FaceList.h" compile="0" resource="0" file="Source/FaceList.h"/>
+      <FILE id="w9kQDK" name="FaceListView.cpp" compile="1" resource="0"
+            file="Source/FaceListView.cpp"/>
+      <FILE id="Nnv3G2" name="FaceListView.h" compile="0" resource="0" file="Source/FaceListView.h"/>
+      <FILE id="f9rDil" name="FacePreviewComponent.cpp" compile="1" resource="0"
+            file="Source/FacePreviewComponent.cpp"/>
+      <FILE id="BynT64" name="FacePreviewComponent.h" compile="0" resource="0"
+            file="Source/FacePreviewComponent.h"/>
+      <FILE id="P4oYQD" name="FaceView.cpp" compile="1" resource="0" file="Source/FaceView.cpp"/>
+      <FILE id="N8YWa8" name="FaceView.h" compile="0" resource="0" file="Source/FaceView.h"/>
+      <FILE id="eEdukp" name="Main.cpp" compile="1" resource="0" file="Source/Main.cpp"/>
+      <FILE id="qGPfs8" name="MainComponent.cpp" compile="1" resource="0"
+            file="Source/MainComponent.cpp"/>
+      <FILE id="C3cH2x" name="MainComponent.h" compile="0" resource="0" file="Source/MainComponent.h"/>
+    </GROUP>
+  </MAINGROUP>
+  <EXPORTFORMATS>
+    <XCODE_MAC targetFolder="Builds/MacOSX">
+      <CONFIGURATIONS>
+        <CONFIGURATION name="Debug" osxSDK="default" osxCompatibility="default" osxArchitecture="default"
+                       isDebug="1" optimisation="1" targetName="SingingFacesApp"/>
+        <CONFIGURATION name="Release" osxSDK="default" osxCompatibility="default" osxArchitecture="default"
+                       isDebug="0" optimisation="3" targetName="SingingFacesApp"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_core" path="../../Juce/JUCE-OSX/modules"/>
+        <MODULEPATH id="juce_events" path="../../Juce/JUCE-OSX/modules"/>
+        <MODULEPATH id="juce_graphics" path="../../Juce/JUCE-OSX/modules"/>
+        <MODULEPATH id="juce_data_structures" path="../../Juce/JUCE-OSX/modules"/>
+        <MODULEPATH id="juce_gui_basics" path="../../Juce/JUCE-OSX/modules"/>
+        <MODULEPATH id="juce_gui_extra" path="../../Juce/JUCE-OSX/modules"/>
+        <MODULEPATH id="juce_cryptography" path="../../Juce/JUCE-OSX/modules"/>
+        <MODULEPATH id="juce_video" path="../../Juce/JUCE-OSX/modules"/>
+        <MODULEPATH id="juce_opengl" path="../../Juce/JUCE-OSX/modules"/>
+        <MODULEPATH id="juce_audio_basics" path="../../Juce/JUCE-OSX/modules"/>
+        <MODULEPATH id="juce_audio_devices" path="../../Juce/JUCE-OSX/modules"/>
+        <MODULEPATH id="juce_audio_formats" path="../../Juce/JUCE-OSX/modules"/>
+        <MODULEPATH id="juce_audio_processors" path="../../Juce/JUCE-OSX/modules"/>
+      </MODULEPATHS>
+    </XCODE_MAC>
+    <XCODE_IPHONE targetFolder="Builds/iOS">
+      <CONFIGURATIONS>
+        <CONFIGURATION name="Debug" iosCompatibility="default" isDebug="1" optimisation="1"
+                       targetName="SingingFacesApp"/>
+        <CONFIGURATION name="Release" iosCompatibility="default" isDebug="0" optimisation="3"
+                       targetName="SingingFacesApp"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_core" path="../../Juce/JUCE-OSX/modules"/>
+        <MODULEPATH id="juce_events" path="../../Juce/JUCE-OSX/modules"/>
+        <MODULEPATH id="juce_graphics" path="../../Juce/JUCE-OSX/modules"/>
+        <MODULEPATH id="juce_data_structures" path="../../Juce/JUCE-OSX/modules"/>
+        <MODULEPATH id="juce_gui_basics" path="../../Juce/JUCE-OSX/modules"/>
+        <MODULEPATH id="juce_gui_extra" path="../../Juce/JUCE-OSX/modules"/>
+        <MODULEPATH id="juce_cryptography" path="../../Juce/JUCE-OSX/modules"/>
+        <MODULEPATH id="juce_video" path="../../Juce/JUCE-OSX/modules"/>
+        <MODULEPATH id="juce_opengl" path="../../Juce/JUCE-OSX/modules"/>
+        <MODULEPATH id="juce_audio_basics" path="../../Juce/JUCE-OSX/modules"/>
+        <MODULEPATH id="juce_audio_devices" path="../../Juce/JUCE-OSX/modules"/>
+        <MODULEPATH id="juce_audio_formats" path="../../Juce/JUCE-OSX/modules"/>
+        <MODULEPATH id="juce_audio_processors" path="../../Juce/JUCE-OSX/modules"/>
+      </MODULEPATHS>
+    </XCODE_IPHONE>
+  </EXPORTFORMATS>
+  <MODULES>
+    <MODULES id="juce_audio_basics" showAllCode="1" useLocalCopy="0"/>
+    <MODULES id="juce_audio_devices" showAllCode="1" useLocalCopy="0"/>
+    <MODULES id="juce_audio_formats" showAllCode="1" useLocalCopy="0"/>
+    <MODULES id="juce_audio_processors" showAllCode="1" useLocalCopy="0"/>
+    <MODULES id="juce_core" showAllCode="1" useLocalCopy="0"/>
+    <MODULES id="juce_cryptography" showAllCode="1" useLocalCopy="0"/>
+    <MODULES id="juce_data_structures" showAllCode="1" useLocalCopy="0"/>
+    <MODULES id="juce_events" showAllCode="1" useLocalCopy="0"/>
+    <MODULES id="juce_graphics" showAllCode="1" useLocalCopy="0"/>
+    <MODULES id="juce_gui_basics" showAllCode="1" useLocalCopy="0"/>
+    <MODULES id="juce_gui_extra" showAllCode="1" useLocalCopy="0"/>
+    <MODULES id="juce_opengl" showAllCode="1" useLocalCopy="0"/>
+    <MODULES id="juce_video" showAllCode="1" useLocalCopy="0"/>
+  </MODULES>
+  <JUCEOPTIONS/>
+</JUCERPROJECT>

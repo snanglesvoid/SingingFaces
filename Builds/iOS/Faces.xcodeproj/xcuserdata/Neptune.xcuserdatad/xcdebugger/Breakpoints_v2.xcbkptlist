@@ -31,7 +31,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "44"
             endingLineNumber = "44"
-            landmarkName = "GraphicsElement::toXml(XmlElement* xml)"
+            landmarkName = "GraphicsElement::toXml(XmlElement *xml)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -89,12 +89,12 @@
                   symbolName = "EllipseElement::~EllipseElement()"
                   moduleName = "Faces"
                   urlString = "file:///Users/Neptune/Documents/SingingFaces/Source/EllipseElement.cpp"
-                  timestampString = "463860483.519294"
+                  timestampString = "463933776.84949"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "26"
                   endingLineNumber = "26"
-                  offsetFromSymbolStart = "47">
+                  offsetFromSymbolStart = "32">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -103,7 +103,7 @@
                   symbolName = "EllipseElement::~EllipseElement()"
                   moduleName = "Faces"
                   urlString = "file:///Users/Neptune/Documents/SingingFaces/Source/EllipseElement.cpp"
-                  timestampString = "463860483.519439"
+                  timestampString = "463933776.850214"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "26"
@@ -117,7 +117,7 @@
                   symbolName = "EllipseElement::~EllipseElement()"
                   moduleName = "Faces"
                   urlString = "file:///Users/Neptune/Documents/SingingFaces/Source/EllipseElement.cpp"
-                  timestampString = "463860483.519578"
+                  timestampString = "463933776.850421"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "26"

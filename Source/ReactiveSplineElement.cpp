@@ -8,13 +8,14 @@
 
 #include "ReactiveSplineElement.h"
 
+#include <cmath>
 
 ReactiveSplineElement::ReactiveSplineElement(GraphicsElement *parent)
 :ReactiveGraphicsElement(parent)
 ,stroke(10)
 {
     precision = 10;
-    colourParameters["color"] = &colour;
+    colourParameters[std::string("color")] = &colour;
     colourParameters["fillColor"] = &fillColour;
     floatParameters["lineThickness"] = &lineThickness;
 }
@@ -49,7 +50,6 @@ void ReactiveSplineElement::calcPath()
     
     path.startNewSubPath(xs(0), ys(0));
     
-    
     float lim = n - 1 - dt;
     
     while(t < lim)
@@ -59,6 +59,12 @@ void ReactiveSplineElement::calcPath()
     }
     
     path.lineTo(x[n-1], y[n-1]);
+    
+    if (close)
+    {
+        path.closeSubPath();
+    }
+    
 }
 
 String ReactiveSplineElement::xmlTag() const
@@ -68,8 +74,6 @@ String ReactiveSplineElement::xmlTag() const
 
 void ReactiveSplineElement::paint(juce::Graphics &g)
 {
-    calcPath();
-    
     g.setColour(colour());
     g.strokePath(path, stroke);
     
@@ -122,4 +126,10 @@ void ReactiveSplineElement::fromXml(juce::XmlElement *xml)
         close = s == "true";
     }
     ReactiveGraphicsElement::fromXml(xml);
+}
+
+void ReactiveSplineElement::update()
+{
+    calcPath();
+    GraphicsElement::update();
 }

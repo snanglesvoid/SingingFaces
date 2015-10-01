@@ -12,9 +12,8 @@
       <FILE id="HUt8jI" name="test.xml" compile="0" resource="1" file="Rescources/test.xml"/>
     </GROUP>
     <GROUP id="{ACEC2795-BD06-668D-42BA-B96FD6666DF8}" name="GuiComponents">
-      <FILE id="Pz6LPs" name="ControlPanel.cpp" compile="1" resource="0"
-            file="Source/ControlPanel.cpp"/>
-      <FILE id="NstkiM" name="ControlPanel.h" compile="0" resource="0" file="Source/ControlPanel.h"/>
+      <FILE id="C8Tq5A" name="XmlTreeView.cpp" compile="1" resource="0" file="Source/XmlTreeView.cpp"/>
+      <FILE id="ou7h4V" name="XmlTreeView.h" compile="0" resource="0" file="Source/XmlTreeView.h"/>
       <FILE id="BohDKp" name="FaceCanvas.cpp" compile="1" resource="0" file="Source/FaceCanvas.cpp"/>
       <FILE id="BsdJVG" name="FaceCanvas.h" compile="0" resource="0" file="Source/FaceCanvas.h"/>
     </GROUP>
@@ -22,6 +21,18 @@
     <FILE id="LXt46s" name="MainComponent.cpp" compile="1" resource="0"
           file="Source/MainComponent.cpp"/>
     <GROUP id="{1A844E0D-3DF1-D583-C000-DDB9A847DEFB}" name="GraphicsElements">
+      <FILE id="gBa8ik" name="GradientElement.cpp" compile="1" resource="0"
+            file="Source/GradientElement.cpp"/>
+      <FILE id="UmejDK" name="GradientElement.h" compile="0" resource="0"
+            file="Source/GradientElement.h"/>
+      <FILE id="RlzgTf" name="ReactiveTransformElement.cpp" compile="1" resource="0"
+            file="Source/ReactiveTransformElement.cpp"/>
+      <FILE id="Y1KjbI" name="ReactiveTransformElement.h" compile="0" resource="0"
+            file="Source/ReactiveTransformElement.h"/>
+      <FILE id="rHVQKA" name="ReactiveWaveformElement.cpp" compile="1" resource="0"
+            file="Source/ReactiveWaveformElement.cpp"/>
+      <FILE id="w761RZ" name="ReactiveWaveformElement.h" compile="0" resource="0"
+            file="Source/ReactiveWaveformElement.h"/>
       <FILE id="LGJzKS" name="ReactiveGraphicsElement.cpp" compile="1" resource="0"
             file="Source/ReactiveGraphicsElement.cpp"/>
       <FILE id="sR97YR" name="ReactiveGraphicsElement.h" compile="0" resource="0"

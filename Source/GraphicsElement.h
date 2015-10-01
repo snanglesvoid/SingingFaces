@@ -21,8 +21,6 @@
 //local includes
 #include "TouchGestureEvent.h"
 #include "GestureInterpretor.h"
-//#include "AudioReactor.h"
-//#include "AudioReactiveParameter.h"
 
 //forward declaration of GraphicsElement
 class GraphicsElement;
@@ -47,6 +45,7 @@ public:
 //===========================================================================
 
     //from GraphicsElement
+    virtual void update(); // this gets called before paint 
     virtual void paint(Graphics& g);
     
     virtual String xmlTag() const;              //override this to specify the xml tag of your subclass
@@ -73,14 +72,23 @@ public:
     bool isTopLevelElement() { return parent == nullptr; }
     
     
+    GraphicsElement* getParent();
+    
+    void addChild(GraphicsElement *newChild);
+    int getNumChildren() const;
+    std::vector<GraphicsElement*>& getChildren();
+    
+    
 protected:
     String name;
     
     GraphicsElement* parent;
-    std::vector<GraphicsElement *> children;
+    std::vector<GraphicsElement*> children;
     
 private:
     void deallocate();
+    
+    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (GraphicsElement);
 };
 
 //important all element header files need to be included here (not at top of file)
@@ -93,6 +101,7 @@ private:
 #include "PathElement.h"
 #include "ImageElement.h"
 #include "TransformElement.h"
+#include "GradientElement.h"
 
 //all subclasses of ReactiveGraphicsElement must be included in "ReactiveGraphicsElement.h" below the class definition
 #include "ReactiveGraphicsElement.h"

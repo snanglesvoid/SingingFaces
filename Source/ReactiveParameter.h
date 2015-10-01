@@ -40,8 +40,6 @@ inline Colour operator *(const Colour &lhs, const float &rhs)
     b = b < 0 ? 0 : (b > 1 ? 1 : b);
     a = a < 0 ? 0 : (a > 1 ? 1 : a);
     
-    //printf("r=%f,g=%f,b=%f,a=%f\n", r,g,b,a);
-    
     return Colour::fromFloatRGBA(r, g, b, a);
 }
 
@@ -81,7 +79,6 @@ public:
 
     T operator()() const
     {
-        //printf("ReactiveParameter::operator(), size = %lu\n", reactors.size());
         T res = base;
         for (int i = 0; i < reactors.size(); i++)
         {
@@ -104,12 +101,11 @@ public:
     void addReactor(const T &excentricity, float *source, const String &name)
     {
         reactors.push_back(Reactor<T>(excentricity, source, name));
-        //printf("added reactor name = %s, new size = %lu\n", name.toStdString().c_str(), reactors.size());
     }
     
     void clear()
     {
-        //reactors.clear();
+        reactors.clear();
     }
     
     const std::vector<Reactor<T> >& getReactors() const
@@ -122,12 +118,6 @@ private:
     T base;
     std::vector<Reactor<T> > reactors;
 };
-
-template<typename T>
-inline void writeReactorsToXml(ReactiveParameter<T> p, XmlElement *xml)
-{
-    
-}
 
 
 #endif

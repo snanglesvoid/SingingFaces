@@ -10,7 +10,7 @@
 namespace BinaryData
 {
     extern const char*   test_xml;
-    const int            test_xmlSize = 1226;
+    const int            test_xmlSize = 1254;
 
     // Points to the start of a list of resource names.
     extern const char* namedResourceList[];

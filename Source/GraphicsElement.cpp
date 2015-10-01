@@ -91,7 +91,10 @@ GraphicsElement* createElementInstance(String xmlTag, GraphicsElement* parent)
         map["repeat"]    = &createElementInstance<RepeatElement>;
         map["rRectangle"]= &createElementInstance<ReactiveRectangleElement>;
         map["rSpline"]   = &createElementInstance<ReactiveSplineElement>;
-        //map["rmsSpline"] = &createElementInstance<AudioReactiveSplineElement>;
+        map["gradient"]  = &createElementInstance<GradientElement>;
+        map["rTransform"]= &createElementInstance<ReactiveTransformElement>;
+        map["waveform"]  = &createElementInstance<ReactiveWaveformElement>;
+
     }
     if (map.count(xmlTag.toStdString()) > 0)
     {
@@ -109,11 +112,31 @@ bool GraphicsElement::contains(const Point<float>& p) const
     return false;
 }
 
-//void GraphicsElement::setupAudioReactorEmitter(AudioReactEventEmitter *emitter)
-//{
-//    this->audioReactEventEmitter = emitter;
-//    for (std::vector<GraphicsElement *>::iterator it = children.begin(); it != children.end(); ++it)
-//    {
-//        (*it)->setupAudioReactorEmitter(emitter);
-//    }
-//}
+void GraphicsElement::update()
+{
+    for (auto it = children.begin(); it != children.end(); it++)
+    {
+        (*it)->update();
+    }
+}
+
+
+GraphicsElement* GraphicsElement::getParent()
+{
+    return parent;
+}
+
+void GraphicsElement::addChild(GraphicsElement *child)
+{
+    children.push_back(child);
+}
+
+int GraphicsElement::getNumChildren() const
+{
+    return children.size();
+}
+
+std::vector<GraphicsElement*>& GraphicsElement::getChildren()
+{
+    return children;
+}

@@ -27,9 +27,12 @@ public:
     virtual void toXml(XmlElement *xml) const;
     virtual void fromXml(XmlElement *xml);
     
+    virtual void update();
+    
     
 private:
     ReactiveParameter<float> x, y, width, height, borderWidth, radius;
+    float fx, fy, fw, fh;
     ReactiveParameter<Colour> fillColour, borderColour;
     bool clip, fill;
     Path clipPath;

@@ -25,7 +25,7 @@
                   symbolName = "PathElement::PathElement(GraphicsElement*)"
                   moduleName = "Faces"
                   urlString = "file:///Users/Neptune/Documents/SingingFaces/Source/PathElement.cpp"
-                  timestampString = "463855056.004911"
+                  timestampString = "464008741.834195"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "14"
@@ -39,7 +39,7 @@
                   symbolName = "PathElement::PathElement(GraphicsElement*)"
                   moduleName = "Faces"
                   urlString = "file:///Users/Neptune/Documents/SingingFaces/Source/PathElement.cpp"
-                  timestampString = "463855056.005067"
+                  timestampString = "464008741.83444"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "25"
@@ -148,11 +148,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../../Source/ReactiveParameter.h"
-            timestampString = "463851146.804692"
+            timestampString = "464006996.097584"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "122"
-            endingLineNumber = "122"
+            startingLineNumber = "118"
+            endingLineNumber = "118"
             landmarkName = "class ReactiveParameter"
             landmarkType = "3">
          </BreakpointContent>
@@ -179,7 +179,7 @@
                   symbolName = "GestureInterpretor::GestureInterpretor()"
                   moduleName = "Faces"
                   urlString = "file:///Users/Neptune/Documents/SingingFaces/Source/GestureInterpretor.cpp"
-                  timestampString = "463855056.008161"
+                  timestampString = "464008741.877044"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "13"
@@ -193,14 +193,28 @@
                   symbolName = "GestureInterpretor::GestureInterpretor()"
                   moduleName = "Faces"
                   urlString = "file:///Users/Neptune/Documents/SingingFaces/Source/GestureInterpretor.cpp"
-                  timestampString = "463855056.008352"
+                  timestampString = "464008741.877197"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "23"
-                  endingLineNumber = "23"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
                   offsetFromSymbolStart = "16">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../Source/ControlPanel.h"
+            timestampString = "463926508.865714"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "52"
+            endingLineNumber = "52">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
